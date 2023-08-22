@@ -1,0 +1,236 @@
+\documentclass[12pt,a4paper]{article}
+
+% USEPACKAGE LISTA
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{marvosym} 
+\usepackage{wrapfig}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage{multicol}
+\hypersetup{colorlinks,citecolor=black,filecolor=black,linkcolor=black,urlcolor=black}
+\usepackage{pdfpages}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{t1enc}
+\usepackage[magyar]{babel}
+\usepackage{bm}
+\usepackage{tikz, tcolorbox}
+\usepackage{verbatim}
+
+\usepackage{pgfplots}
+\pgfplotsset{height = 10cm, width=15cm,compat=1.9}
+
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0em}
+\pagestyle{fancy}
+\fancyhf{}
+
+\title{Matematika G1-G2-G3 kidolgozott tételek}
+\author{Kun László Ákos}
+\date{2022/2023}
+
+\lhead{2022/2023}
+\chead{Matematika Szigorlat tételek}
+\rhead{Kun L.}
+\cfoot{\thepage. oldal}
+
+% ITT KEZDŐDIK A DOKUMENTUM
+\begin{document}
+
+\maketitle{}
+\begin{tcolorbox}[colback=green!5!white,colframe=green!60!black,title= MINTA!!]
+    \begin{itemize}
+        \item To be continued
+    \end{itemize}
+\end{tcolorbox}
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!60!black,title= MINTA!!]
+    \begin{itemize}
+        \item To be continued
+    \end{itemize}
+\end{tcolorbox}
+\begin{tcolorbox}[colback=red!5!white,colframe=red!60!black,title= MINTA!!]
+    \begin{itemize}
+        \item To be continued
+    \end{itemize}
+\end{tcolorbox}
+
+\newpage
+\begin{center}
+    \textbf{Matematika G1 szóbeli tételek}
+\end{center}
+\textbf{Halmazelmélet és komplex számok:}
+
+\begin{tcolorbox}[colback=green!5!white,colframe=green!60!black,title= 1. Halmaz{,} metszet{,} unió{,} különbség]
+    \begin{itemize}
+        \item \textbf{halmaz:} nem definiált alapfogalom
+        \begin{itemize}
+            \item \textbf{jelölés:} \(A, B\) halmazok; \(a \in  A; a \notin  B\) (nem definiáljuk)
+            \item \(\varnothing \) \textbf{üreshalmaz:} egyetlen eleme sincs
+            \item \textbf{nemüres halmaz:} \(\exists\)  legalább egy eleme
+            \item \textbf{jól megadott halmaz:} ha bármely elemről eldönthető, hogy beletartozik-e
+        \end{itemize}
+    \end{itemize}
+    \(A\) és \(B\) az \(X\) alaphalmaz részhalmazai, ekkor
+    \begin{itemize}
+        \item \textbf{metszet:} \(A \cap  B = \{ x \in  X | x \in  A \land  x \in  B \}\)\\
+        Két halmaz diszjunkt, ha metszetük üres halmaz.
+        \item \textbf{unió:} \(A \cup  B = \{ x \in X | x \in A \vee  x \in B \}\)
+        \item \textbf{különbség:} \(A \setminus  B = \{ x \in X \mid  x \in A \wedge  x \notin B \}\)
+        \item \textbf{egyéb:} \(A \subset  A\) az A részhalmaza önmagának: reflexív tulajdonság
+    \end{itemize}
+        ha \(A \subset  B\) és \(B \subset  A \rightarrow  A = B\) vagyis antiszimmetrikus (A részhz.-a B-nek és fordítva)
+        ha \(A \subset  B\) és \(B \subset  C \rightarrow  A \subset  C\) tranzitív tulajdonság (A a nagyobb hz.-nak is részhz.-a)
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=green!5!white,colframe=green!60!black,title= 2. Descartes-szorzat{,} hatványhalmaz]
+    \begin{itemize}
+        \item \textbf{Descartes-szorzat:} Az \(A\) és \(B\) halmazok Descartes-szorzatán az \(A\) és \(B\) halmazok elemeiből alkotott összes rendezett elempár halmazát értjük.
+        \begin{itemize}
+            \item Jelölése: \(A \times B = \{ (a;b) \mid  a \in A \wedge  b \in B \}\)
+            \item Az \(A \times  B\) szorzathalmaz egy \(T \in A \times B\) részhalmaza az A és B halmazok elemei közti kételemű (binér) reláció
+            \item Ha \((a; b) \in T\), akkor \(a\) és \(b\) relációban vannak: \(a\top b \)
+        \end{itemize}
+        \item \textbf{Hatványhalmaz:} egy halmaz összes részhalmazainak halmaza  
+        Egy \(n\) elemű halmaznak \(2^n\) darab részhalmaza van
+    \end{itemize}
+    \textbf{Kommutativitás:} felcserélhetőség\\
+    \textbf{Asszociativitás:} csoportosíthatóság\\
+    \textbf{Disztributivitás:} szétbonthatóság
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=green!5!white,colframe=green!60!black,title= 3. Csoport{,} gyűrű{,} test]
+    \begin{itemize}
+        \item \textbf{Félcsoport:} olyan halmaz, melyben a kétváltozós műveletek asszociatívak (pl. természetes számok esetén az összeadás)
+        \item \textbf{Csoport:} olyan halmaz, melyben a kétváltozós műveletek asszociatívak ÉS létezik
+        zérus elem ill. inverz elem (összeadásnak a kivonás, szorzásnak az osztás az
+        invertálása) (pl. egész számok halmaza esetén az összeadás)
+        \item \textbf{Abel-csoport:} olyan halmaz, melyben a kétváltozós műveletek asszociatívak és
+        kommutatívak is ill. létezik a zérus elem és az inverz elem
+        \item \textbf{Gyűrű:} olyan csoport, amelyben a kétváltozós műveletek már disztributívak is
+        egymásra nézve (pl. az egész számok esetén az összeadásra nézve a szorzás)
+        A gyűrűben tehát elvégezhető: az összeadás, a kivonás és a szorzás
+        \item \textbf{Test:} olyan csoport, amelyben a kétváltozós műveletek disztributívak egymásra nézve
+        (pl. racionális számoknál az összeadásra nézve a szorzás disztributív)
+        A testben, mint algebrai struktúrában tehát elvégezhető az összeadás, kivonás,
+        szorzás és az osztás
+    \end{itemize}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=green!5!white,colframe=green!60!black,title= 4. Komplex számok algebrai{,} trigonometrikus{,} exponenciális alakja]
+    \begin{itemize}
+        \item \textbf{Algebrai alak:} \(z = a + b\cdot i\) (\(z\) valós része \(a\), képzetes része pedig \(b\))
+        \begin{itemize}
+            \item \textbf{konjugált:} \(\overline{z} = a - b\cdot i\)
+            \item \textbf{abszolút érték:} \(\left\lvert z \right\rvert  = \sqrt{a^2+b^2}\) (Pitagorasz-tételből), és mivel: \\ \(z \cdot \overline{z} = (a + b\cdot i)(a - b\cdot i) = a^2 -(b\cdot i)^2=a^2+b^2\), ezért \( \left\lvert z\right\rvert =\sqrt{z \cdot \overline{z} }  \)
+        \end{itemize}
+        \item \textbf{Trigonometrikus (polár) alak:} \(z = r(cos(\varphi ) + i \cdot sin(\varphi))\), mivel
+        $$ cos(\varphi)=\frac{a}{r} $$
+        $$ sin(\varphi)=\frac{b}{r} $$
+        Tehát \(a = r\cdot cos(\varphi)\) és \(b = r\cdot sin(\varphi)\), innen már egyértelműen következik a trigonometrikus alak az algebraiból \(r\)-t kiemelve \((a = r\cdot cos(\varphi)\) és \(b\cdot i = r \cdot i\cdot sin(\varphi))\)
+        \item \textbf{Exponenciális alak:} \(z = r \cdot e^{e\cdot \varphi}\) - ez csak egy szimbólum, rövidítés, ami megkönnyíti a
+        számolást a komplex számokkal, lényegében a trigonometrikus alak kicsit rövidebben.
+    \end{itemize}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=green!5!white,colframe=green!60!black,title= 5. Komplex számok hatványozása]
+    \textbf{de Moivre-képlet:} 
+    $$z^n = [r(cos(\varphi)+i\cdot sin(\varphi))]^n=r^n(cos(n\varphi)+i\cdot sin(n\varphi))$$
+    \textbf{Bizonyítás:} Teljes indukció használatával
+    \begin{enumerate}
+        \item \(n=1\)-re és \(n=2\)-re \textbf{igaz}
+        \item indukciós feltétel: \(n = k\)
+        \item Ekkor \(z^k= r^k(cos(k\varphi)+i\cdot sin(k\varphi))\)
+        \item ha \(n = k + 1\), akkor:
+    \end{enumerate}
+    $$z^{k+1}=z^k\cdot k = r^k(cos(k\varphi)+i\cdot sin(k\varphi))\cdot r(cos(\varphi) +i\cdot sin(\varphi))$$
+    $$=r^{k+1}[cos(k\varphi + \varphi)+ i\cdot sin(k\varphi + \varphi)] =$$
+    $$r^{k+1}[cos((k+1)\varphi)+ i\cdot sin((k+1)\varphi)] $$\\
+    és \(k+1\) az \(n\) volt, tehát a bizonyítás kész.
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=green!5!white,colframe=green!60!black,title= 6. Komplex számok gyökvonása]
+$$z_1^n = z_2=r_1^n\cdot (cos(n\varphi_1)+i\cdot sin(n\varphi_1)) = r_2\cdot (cos(\varphi_2)+i\cdot sin(\varphi_2))$$  
+$$z_1 = \sqrt[n]{z_2} $$  
+\textbf{Két komplex szám akkor egyenlő, ha a hosszuk és argumentumuk is egyenlő:}
+    \begin{itemize}
+        \item \(r_1= \sqrt[n]{r_2}\) \hspace{61pt} (\textbf{hossz})
+        \item \(n\cdot \varphi_1 = \varphi_2 + k\cdot 2\pi\) \hspace{10pt} (\textbf{argumentum}) \(\rightarrow\) forgásszög, periodicitás miatt \(p = 2\pi \)
+        \item Így \(\varphi_1 = \frac{\varphi_2+k\cdot2\pi}{n} \hspace{30pt}\) \(k \in \{0, 1, 2, ... , n - 1\}\)
+        \item Tehát: 
+    \end{itemize}
+    $$\sqrt[n]{z}= \sqrt[n]{r}(cos(\frac{\varphi+k\cdot2\pi}{n}) + i\cdot sin(\frac{\varphi+k\cdot2\pi}{n}))$$
+    Az \(n\)-edik gyökvonás után olyan komplex számokat kapunk, amik egy szabályos sokszög
+    (\(n\)-szög) csúcsai! Tehát n-edik gyökvonás esetén \(n\) db komplex szám a megoldás.
+\end{tcolorbox}
+\newpage
+
+\textbf{Numerikus sorozatok:}
+
+\begin{tcolorbox}[colback=green!5!white,colframe=green!60!black,title= 1. Numerikus sorozat határértéke]
+    \begin{itemize}
+        \item Egy függvényt numerikus sorozatnak nevezünk, ha értelmezési tartománya \(\mathbb{N}^+ \)\\
+        \textbf{Jelölései:} \(a_n\), \((a:n)\);\\
+        \textbf{Megadása:} explicit alak, rekurzív, leírás.
+        \item \textbf{Tétel:} Az \((a_n)\) konvergens és határértéke az \(a \in \mathbb{R} \) akkor és csak akkor, ha bármely pozitív \(\varepsilon\)-hoz létezik olyan \(N(\varepsilon)\) küszöbindex (küszöbszám), hogy a sorozat \(N(\varepsilon)\)-nál nagyobb indexű elemei már az \("a"\) \(\varepsilon\)-sugarú környezetébe esnek.
+    \end{itemize}
+    \textbf{Következmény:}\\
+    Ha egy sorozatnak véges sok elemét megváltoztatjuk, vagy a sorozathoz véges sok elemet
+hozzáveszünk/elhagyunk belőle, akkor sem a konvergencia, sem a határérték nem változik
+meg!
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=green!5!white,colframe=green!60!black,title= 2. Konvergens{,} divergens sorozat]
+    \begin{itemize}
+        \item \textbf{Definíció} Az \((a_n)\) konvergens, ha van olyan \(a \in R\) szám, hogy minden \(\varepsilon > 0\) valós szám esetén létezik \(N(\varepsilon)\) valós küszöbszám, hogy
+    \end{itemize}
+        $$\left\lvert a_n -a\right\rvert < \varepsilon,\hspace{5pt}ha\hspace{5pt}n > N(\varepsilon)$$
+        $$azaz$$
+        $$a- \varepsilon < a_n< a+\varepsilon$$
+    \begin{itemize}
+        \item Az \("a"\) számot az \((a_n)\) határértékének hívjuk, és a \(\lim_{n \to \infty} a_n = a\)  vagy az \(a_n \to a\), ha \(n \to \infty \) jelölést használjuk.
+        \item Az \((a_n)\) divergens, ha nem konvergens.
+    \end{itemize}
+\textbf{Tételek:}
+\begin{itemize}
+    \item Konvergens sorozat korlátos.
+    \item Monoton korlátos sorozat konvergens.
+    \item Monoton, nem korlátos sorozatnak van határértéke.
+    \item konvergens \(\rightarrow\) van határértéke
+    \item van határértéke/torlódási pontjai \(\rightarrow\) nem biztos, hogy konvergens
+    \item \textbf{Bolzano-Weierstrass-tétel:} minden korlátos sorozatnak van konvergens részsorozata.
+\end{itemize}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=green!5!white,colframe=green!60!black,title= 3. Nevezetes sorozatok]
+    Olyan sorozatok, amelyek határértékét nem kell bizonyítani, csak felhasználni!
+    \begin{itemize}
+        \item \textbf{Bernoulli-féle egyenlőtlenség:} ha \(x \geq  -1\), akkor \((1+x)^n \geq 1 + n\cdot x\)
+    \end{itemize}
+    \begin{enumerate}
+        \item \(a^n \to 0\), ha \(\left\lvert a\right\rvert <1\)\\
+        \(a^n \to 1\), ha \(a=1\)\\
+        \(a^n \to +\infty\), ha \(a>1\)\\
+        \(a^n\) divergens, ha \(a<-1\)
+        \item \(\sqrt[n]{a} \to 1\), ha \(n \to \infty (a>0)\)
+        \item \(a^n\cdot n^k \rightarrow 0\), nullsorozat, ha \(\left\lvert a\right\rvert <1 \) és \(k\) rögzített természetes szám
+        \item \(\sqrt[n]{n} \to 1\), ha \(n \to \infty \hspace{5pt}(n\geq 2)\)
+        \item \(\frac{a^n}{n!} \to 0 (a \in \mathbb{R} )\)
+    \end{enumerate}
+    \textbf{Legfontosabb:}
+    $$(1+\frac{\alpha}{n})^n \to e^{\alpha}$$
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=green!5!white,colframe=green!60!black,title= 4. Cauchy sorozat]
+    \begin{itemize}
+        \item To be continued
+    \end{itemize}
+\end{tcolorbox}
+
+\end{document}
