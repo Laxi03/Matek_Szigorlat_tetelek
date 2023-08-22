@@ -229,6 +229,130 @@ meg!
 
 \begin{tcolorbox}[colback=green!5!white,colframe=green!60!black,title= 4. Cauchy sorozat]
     \begin{itemize}
+        \item \textbf{Definíció:} Az \((a_n)\)-t Cauchy-sorozatnak nevezzük, ha minden \(\varepsilon > 0\) esetén \(\exists N(\varepsilon)\) küszöbindex, hogy: 
+        \begin{center}
+            \(\left\lvert a_n -a_m\right\rvert  < \varepsilon\), ha \(n,m > N(\varepsilon)\) \(\hspace{15pt}\) \((n,m \in N)\)
+        \end{center}
+        \item \textbf{Tétel:} Cauchy-féle konvergencia kritérium (szükséges ÉS elégséges feltétel). Az \((a_n)\) akkor és csak akkor konvergens, ha Cauchy sorozat!
+    \end{itemize}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=green!5!white,colframe=green!60!black,title= 5. Torlódási pont]
+    \begin{itemize}
+        \item \textbf{Definíció:} A \(h\) a \(H\) halmaz torlódási pontja, ha \(h\) bármely környezetében van \(H\)-nak \(h\)-tól
+        különböző eleme. A \(t\) szám a sorozat torlódási pontja, ha \(t\) akármilyen kicsi környezete a sorozat végtelen sok
+        elemét tartalmazza. Például: \((-1)^n\)
+    \end{itemize}
+\end{tcolorbox}
+\newpage
+
+\textbf{Függvények, derivált:}
+
+\begin{tcolorbox}[colback=green!5!white,colframe=green!60!black,title= 1. Függvények{,} értelmezési tartomány{,} értékkészlet]
+    \begin{itemize}
+        \item \textbf{Függvény:} ha az \(A\) (nemüres) halmaz minden egyes eleméhez hozzárendeljük a \(B\)
+        (nemüres) halmaz pontosan egy elemét, akkor ezt a leképezést függvénynek nevezzük.
+        \item \textbf{Értelmezési tartomány:} azon elemek halmaza, melyekhez a függvény hozzárendel
+        egy-egy elemet a B halmazból, jelen esetben ez az A halmaz.
+        $$D_f = A$$
+        \item \textbf{Értékkészlet:} A képhalmaz, azaz a \(B\) halmaz azon elemei, melyeket az \(f\) függvény
+        ténylegesen hozzárendel az \(A\) valamelyik eleméhez. Az értékkészlet tehát része a képhalmaznak:
+        $$R_f \subset B$$
+    \end{itemize}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=green!5!white,colframe=green!60!black,title= 2. Függvény határérték]
+Azt mondjuk, hogy az \(f\) függvény határértéke az \("a"\) pontban \(A\), ha minden \(\varepsilon > 0\) számhoz
+létezik olyan \(\delta(\varepsilon)  > 0\), hogy ha \(0 < \left\lvert x-a \right\rvert  < \delta(\varepsilon)\), akkor \(|f(x) - A| < \varepsilon\).\\
+/Ez a Cauchy-féle definíció/\\
+\begin{center}
+    \(|x - a| < \delta(\varepsilon)\) azt jelenti, hogy:
+\end{center}
+    $$- \delta(\varepsilon) < x - a < \delta(\varepsilon) \hspace{10pt} /+a$$
+    $$a - \delta(\varepsilon) < x < a + \delta(\varepsilon)$$
+
+\textbf{Szemléletesesen:} azt jelenti, hogy a függvényértékek \((f(x)-ek)\) tetszőlegesen megközelítik az
+A számot, ha az \(\varepsilon\) értékek elég közel kerülnek \(a\)-hoz. Az \(f\) függvénynek az \("a"\) pontban acsa (akkor és csak akkor) van határértéke, ha van bal- és
+jobboldali határértéke és ez a kettő megegyezik!
+\begin{itemize}
+    \item \textbf{Határérték a végtelenben:}
+    \begin{itemize}
+        \item Az \(f\) függvény határértéke \(+\infty\)-ben \(A\), ha minden \(\varepsilon > 0\) esetén van olyan \(N(\varepsilon)\), hogy
+    \(|f(x) - A| < \varepsilon\), ha \(x > N(\varepsilon)\).
+        \item Az \(f\) függvény határértéke \(-\infty\)-ben \(A\), ha minden \(\varepsilon > 0\) esetén van olyan \(N(\varepsilon)\), hogy
+    \(|f(x) - A| < \varepsilon\), ha \(x < N(\varepsilon)\).
+    \end{itemize}
+    \item \textbf{A végtelen, mint határérték:}
+    \begin{itemize}
+        \item Az \(f\) függvény határértéke \(a\)-ban \(+ \infty\), ha bármely \(N > 0\) esetén van olyan \(\delta(N)\), hogy \(f(x) > N\), ha \(0 < |x - a| < \delta(N)\).
+        \item Az \(f\) függvény határértéke \(a\)-ban \(- \infty\), ha bármely \(N > 0\) esetén van olyan \(\delta(N)\), hogy \(f(x) < N\), ha \(0 < |x - a| < \delta(N)\).
+    \end{itemize}
+\end{itemize}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=green!5!white,colframe=green!60!black,title= 3. Függvény folytonosság]
+    Az \(f\) függvény az értelmezési tartományának \("a"\) pontjában folytonos, ha ebben a pontban
+létezik határértéke és ez egyenlő az adott pontbeli helyettesítési értékkel, azaz ha
+$$\lim_{x \to a} f(x) = f(a) $$
+    \begin{itemize}
+        \item \textbf{Definíció:} Az \(f\) függvényt folytonosnak nevezzük az \(a \in D_f\) pontban, ha bármely \(\varepsilon > 0\)
+        esetén van olyan \(\delta(\varepsilon) > 0\) szám, hogy ha \(|x - a| < \delta(\varepsilon)\), akkor \(|f(x) - f(a)| < \varepsilon\).
+    \end{itemize}
+    Az \(f\) függvény egy intervallumon egyenletesen folytonos, ha bármely \(\varepsilon > 0\) számhoz van
+    olyan \(\delta > 0\) szám, hogy \(f\) értelmezési tartományának bármely \(x_1\), \(x_2\) elemére, amelyek
+    távolsága egymástól kisebb \(\delta\)-nál, fennáll az alábbi egyenlőtlenség.
+    $$|f(x_1) - f(x_2)| < \varepsilon$$
+    \begin{itemize}
+        \item \textbf{Tétel:} Az \(f\) függvény pontosan akkor folytonos értelmezési tartományának \("a"\) pontjában, ha
+        ott balról és jobbról is folytonos.
+        \item \textbf{Definíció:} Az \(f\) függvény folytonos az \( ] a, b [ \)-on, ha folytonos \(]a, b[ \) minden pontjában.
+        Az f függvény folytonos az \([a, b]\)-on, ha folytonos \(]a, b[\)-on és \(a\)-ban balról, \(b\)-ben
+        jobbról folytonos.
+    \end{itemize}
+    \textbf{A folytonosság néhány nevezetes következménye:}
+    \begin{itemize}
+        \item ha \(f\) folytonos egy zárt intervallumon, akkor ott egyenletesen folytonos.
+        \item \textbf{Bolzano-tétel:} ha a függvény a zárt intervallumon folytonos, és az intervallum két
+        végpontjában az értékei különböző előjelűek, akkor az intervallum belsejében van
+        zérushelye. Másképp: felvesz minden \(f(a)\) és \(f(b)\) közé eső értéket egy folytonos függvény egy zárt intervallumon.
+        \item \textbf{Weierstrass-tétel:} Zárt intervallumon folytonos függvény felveszi a minimumát és a
+        maximumát is függvényértékként; továbbá minden olyan értéket, ami a legnagyobb és
+        legkisebb érték közé esik.
+    \end{itemize}
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=green!5!white,colframe=green!60!black,title= 4. Inverz függvény]
+Ha az \(f:X \to Y\) függvénynél a leképezés irányát megfordítjuk, vagyis az \(Y\) halmaz elemeit
+képezzük le az \(X\) halmaz elemeire, akkor ez a fordított leképezés általában nem függvény, mert nem biztos, hogy egy \(y \in Y\) elemnek egyetlen \(x \in X\) elem felel meg. Ezért fontos az, hogy f bijektív, azaz kölcsönösen egyértelmű legyen, mert ekkor az \(f-1\) -gyel jelölt fordított leképezés is már függvény lesz.    
+    \begin{itemize}
+        \item \textbf{Definíció:} Ha az \(f: X \to Y\) függvény kölcsönösen egyértelmű, akkor az \(f^{-1} = Y \to X\)
+        függvényt \(f\) inverz függvényének nevezzük. Ekkor igaz az alábbi összefüggés:
+    \end{itemize}
+    $$f^{-1}(f(x)) = f(f^{-1}(x)) = x$$
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=green!5!white,colframe=green!60!black,title= 5. Derivált]
+    \begin{itemize}
+    \item  Legyen \(f:I \subset R \to R\) függvény értelmezve az \(x \in I\) pontban és annak egy környezetében. 
+    \item Ha \(x \neq  a\), akkor az \(\frac{f(x)-f(a)}{x-a}\) hányadost differenciahányadosnak nevezzük.
+    \item Ha létezik és véges a \(Lim_{x\to a}\frac{f(x)-f(a)}{x-a}\) határérték, akkor azt az \(f\) függvény deriváltjának vagy \("a"\) pontbeli differenciálhányadosának nevezzük és a \(\frac{d f(a)}{d x}\) vagy \(f'(a)\) jelöléseket használjuk.
+    \item Ha \(x\)-szel elkezdek közelíteni \(a\)-hoz: a szelőkből érintő lesz. \(m = tan(\alpha) =\frac{f(x)-f(a)}{x-a}\)
+    \item Az érintő egyenlete: \(y = f'(a)(x - a) + f(a) \sim  m(x - x_0) = y - y_0\) átrendezve.
+    \item Adott pontbeli derivált = adott pontbeli érintő meredeksége!
+    \item \textbf{Definíció:} az \(f:[a; b] \to R\) függvény balról differenciálható a \(b\) pontban, ha létezik és véges a \(Lim_{x \to b-}\frac{f(x)-f(b)}{x-b}\) egyoldali határérték.
+    \item \textbf{Definíció:} az \(f:[a; b] \to R\) függvény jobbról differenciálható az \(a\) pontban, ha létezik és véges a \(Lim_{x \to a+}\frac{f(x)-f(a)}{x-a}\) egyoldali határérték.
+    \\Eszerint megkülönböztetünk bal- és jobboldali deriváltat.
+    \item \textbf{Tétel:} az \(f:I \to R\) függvény differenciálható az \(a \in I\) pontban \(\Longleftrightarrow\)  ha létezik a bal- és jobboldali deriváltja \(a\)-ban és ezek egyenlők.
+    \item \textbf{Tétel:} ha az \(f\) függvény differenciálható az \(x_0\) pontban, akkor ott folytonos.
+    \item \textbf{Definíció:} az \(f: ]a; b[ \to R\) függvény differenciálható \(]a;b[\)-on, ha differenciálható \(\forall x \in]a; b[\) pontban.
+        Az \(f:[a; b] \to R\) függvény differenciálható \([a;b]\)-on, ha differenciálható \(]a; b[ \)-on és \(a\)-ban jobbról, \(b\)-ben balról differenciálható.
+\end{itemize}
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=green!5!white,colframe=green!60!black,title= 6. Lokális szélsőérték definíciója és feltétele]
+    \begin{itemize}
         \item To be continued
     \end{itemize}
 \end{tcolorbox}
