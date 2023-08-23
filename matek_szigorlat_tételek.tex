@@ -66,60 +66,51 @@
 \end{center}
 \textbf{Halmazelmélet és komplex számok:}
 
-\begin{tcolorbox}[colback=green!5!white,colframe=green!60!black,title= 1. Halmaz{,} metszet{,} unió{,} különbség]
-    \begin{itemize}
-        \item \textbf{halmaz:} nem definiált alapfogalom
-        \begin{itemize}
-            \item \textbf{jelölés:} \(A, B\) halmazok; \(a \in  A; a \notin  B\) (nem definiáljuk)
-            \item \(\varnothing \) \textbf{üreshalmaz:} egyetlen eleme sincs
-            \item \textbf{nemüres halmaz:} \(\exists\)  legalább egy eleme
-            \item \textbf{jól megadott halmaz:} ha bármely elemről eldönthető, hogy beletartozik-e
-        \end{itemize}
-    \end{itemize}
-    \(A\) és \(B\) az \(X\) alaphalmaz részhalmazai, ekkor
-    \begin{itemize}
-        \item \textbf{metszet:} \(A \cap  B = \{ x \in  X | x \in  A \land  x \in  B \}\)\\
-        Két halmaz diszjunkt, ha metszetük üres halmaz.
-        \item \textbf{unió:} \(A \cup  B = \{ x \in X | x \in A \vee  x \in B \}\)
-        \item \textbf{különbség:} \(A \setminus  B = \{ x \in X \mid  x \in A \wedge  x \notin B \}\)
-        \item \textbf{egyéb:} \(A \subset  A\) az A részhalmaza önmagának: reflexív tulajdonság
-    \end{itemize}
-        ha \(A \subset  B\) és \(B \subset  A \rightarrow  A = B\) vagyis antiszimmetrikus (A részhz.-a B-nek és fordítva)
-        ha \(A \subset  B\) és \(B \subset  C \rightarrow  A \subset  C\) tranzitív tulajdonság (A a nagyobb hz.-nak is részhz.-a)
+\begin{tcolorbox}[colback=green!5!white,colframe=green!60!black,title= 1. Halmaz{,} unió{,} metszet{,} különbség]
+    \textbf{Halmaz:} Közös tulajdonságú elemek összessége.\\\\
+    \textbf{Unió:} Két vagy több halmaz uniója mindazon elemek halmaza, amelyek legalább az egyik halmaznak elemei.
+                $$A \cup  B = \{ x \in X\mid x \in A \vee  x \in B\}$$
+    \textbf{Metszet:} Két vagy több halmaz metszete pontosan azoknak az elemeknek a halmaza, melyek mindegyik halmaznak elemei
+                $$A \cap   B = \{ x \in X\mid x \in A \wedge x \in B\}$$
+    \textbf{Különbség:} \(A\) és \(B\) halmaz különbsége az \(A\) halmaz mindazon elemeinek halmaza, amelyek a \(B\) halmaznak nem elemei
+                $$A \setminus   B = \{ x \in X\mid x \in A \wedge x \ni B\}$$
+    \begin{center}
+        \fbox{\includegraphics[scale = 0.5]{1.png}}
+    \end{center}
 \end{tcolorbox}
 
 \begin{tcolorbox}[colback=green!5!white,colframe=green!60!black,title= 2. Descartes-szorzat{,} hatványhalmaz]
-    \begin{itemize}
-        \item \textbf{Descartes-szorzat:} Az \(A\) és \(B\) halmazok Descartes-szorzatán az \(A\) és \(B\) halmazok elemeiből alkotott összes rendezett elempár halmazát értjük.
-        \begin{itemize}
-            \item Jelölése: \(A \times B = \{ (a;b) \mid  a \in A \wedge  b \in B \}\)
-            \item Az \(A \times  B\) szorzathalmaz egy \(T \in A \times B\) részhalmaza az A és B halmazok elemei közti kételemű (binér) reláció
-            \item Ha \((a; b) \in T\), akkor \(a\) és \(b\) relációban vannak: \(a\top b \)
-        \end{itemize}
-        \item \textbf{Hatványhalmaz:} egy halmaz összes részhalmazainak halmaza  
-        Egy \(n\) elemű halmaznak \(2^n\) darab részhalmaza van
-    \end{itemize}
-    \textbf{Kommutativitás:} felcserélhetőség\\
-    \textbf{Asszociativitás:} csoportosíthatóság\\
-    \textbf{Disztributivitás:} szétbonthatóság
+    Az A és B Halmazok Descartes-szorzatán az A és B Halmazok elemeiből alkotott összes rendezett elempárok halmazát értjük.
+    $$A \times B := \{(a,b)\mid a \in A \wedge b \in B\}$$
+    \textbf{Hatványhalmaz:} Egy halmaz összes részhalmazainak halmazát a Halmaz hatványhalmazának hívjuk.
 \end{tcolorbox}
 
 \begin{tcolorbox}[colback=green!5!white,colframe=green!60!black,title= 3. Csoport{,} gyűrű{,} test]
-    \begin{itemize}
-        \item \textbf{Félcsoport:} olyan halmaz, melyben a kétváltozós műveletek asszociatívak (pl. természetes számok esetén az összeadás)
-        \item \textbf{Csoport:} olyan halmaz, melyben a kétváltozós műveletek asszociatívak ÉS létezik
-        zérus elem ill. inverz elem (összeadásnak a kivonás, szorzásnak az osztás az
-        invertálása) (pl. egész számok halmaza esetén az összeadás)
-        \item \textbf{Abel-csoport:} olyan halmaz, melyben a kétváltozós műveletek asszociatívak és
-        kommutatívak is ill. létezik a zérus elem és az inverz elem
-        \item \textbf{Gyűrű:} olyan csoport, amelyben a kétváltozós műveletek már disztributívak is
-        egymásra nézve (pl. az egész számok esetén az összeadásra nézve a szorzás)
-        A gyűrűben tehát elvégezhető: az összeadás, a kivonás és a szorzás
-        \item \textbf{Test:} olyan csoport, amelyben a kétváltozós műveletek disztributívak egymásra nézve
-        (pl. racionális számoknál az összeadásra nézve a szorzás disztributív)
-        A testben, mint algebrai struktúrában tehát elvégezhető az összeadás, kivonás,
-        szorzás és az osztás
-    \end{itemize}
+        \textbf{Félcsoport:} olyan halmaz, melyben a kétváltozós műveletek asszociatívak (pl. természetes számok esetén az összeadás)\\\\
+        \textbf{Csoport:} Legyen \(G\neq 0\) és egy \(\circ \) művelet (szorzás). Ekkor \((G, \circ )\) csoport, ha teljesülnek az alábbiak:
+        \begin{enumerate}
+            \item \((a \circ b) \circ c = a \circ (b \circ c)\) minden \(a, b, c \in G\) esetén
+            \item bármely \(e \in G\), hogy \(a \circ e = e \circ a = a\) minden \(a \in G\) esetén (létezik az egységelem, \(e\), amely asszociatív)
+            \item minden \(a \in G\) esetén létezik \(a' \in G\), hogy \(a \circ a'=a' \circ a = e\) (létezik inverzelem)
+        \end{enumerate}
+        \textbf{Ábel-csoport:} olyan halmaz, melyben a kétváltozós műveletek asszociatívak és kommutatívak is ill. létezik a zérus elem és az inverz elem\\\\
+        \textbf{Gyűrű:}
+        Legyen \(R\neq 0\) és \(+, \circ \) két művelet. Ekkor \((R, +, \circ )\) gyűrű ha teljesülnek az alábbiak:
+        \begin{enumerate}
+            \item \((R, +)\) Ábel csoportot alkot (Ábel csoport = kommutatív csoport)
+            \item A  művelet asszociatív (csoportosítható) \((a \circ b) \circ c = a \circ (b \circ c)\) minden \(a, b, c \in R\) esetén
+            \item A \(\circ \) művelet disztributív \(+\)-ra nézve (összekapcsolható) \((a + b) \circ c = a \circ c + b \circ c\) minden \(a, b, c \in R\) esetén
+        \end{enumerate}
+        \textbf{Test:} 
+        Legyen \(T \neq 0\) és \(+, \circ \) két művelet. Ekkor \((T, +, \circ)\) test ha teljesülnek az alábbiak:
+        \begin{enumerate}
+            \item (T, +) Ábel csoportot alkot
+            \item A \(\circ\) művelet legyen asszociatív (csoportosítható) \((a \circ b) \circ c = a \circ (b \circ c)\) minden \(a, b, c \in R\) esetén
+            \item A \(\circ\) művelet legyen disztributív azaz \((a + b) \circ c = a \circ c + b \circ c\) minden \(a, b, c \in R\) esetén
+            \item Létezik \(e \in G\), hogy \(a \circ e = e \circ a = a\) minden \(a \in T\) esetén (létezik egységelem a második műveletre)
+            \item A \(+\) műveletekhez tartozó egységelem kivételével bármely \(a \in G\) esetén létezik \(a' \in G\), hogy \(a \circ a' = a' \circ a = e\) (létezik az inverz elem, kivéve az első művelethez \((+)\) tartozó egységelem
+            esetében)
+        \end{enumerate}
 \end{tcolorbox}
 
 \begin{tcolorbox}[colback=green!5!white,colframe=green!60!black,title= 4. Komplex számok algebrai{,} trigonometrikus{,} exponenciális alakja]
@@ -133,7 +124,7 @@
         $$ cos(\varphi)=\frac{a}{r} $$
         $$ sin(\varphi)=\frac{b}{r} $$
         Tehát \(a = r\cdot cos(\varphi)\) és \(b = r\cdot sin(\varphi)\), innen már egyértelműen következik a trigonometrikus alak az algebraiból \(r\)-t kiemelve \((a = r\cdot cos(\varphi)\) és \(b\cdot i = r \cdot i\cdot sin(\varphi))\)
-        \item \textbf{Exponenciális alak:} \(z = r \cdot e^{e\cdot \varphi}\) - ez csak egy szimbólum, rövidítés, ami megkönnyíti a
+        \item \textbf{Exponenciális alak:} \(z = r \cdot e^{i\cdot \varphi}\) - ez csak egy szimbólum, rövidítés, ami megkönnyíti a
         számolást a komplex számokkal, lényegében a trigonometrikus alak kicsit rövidebben.
     \end{itemize}
 \end{tcolorbox}
@@ -174,25 +165,17 @@ $$z_1 = \sqrt[n]{z_2} $$
 \textbf{Numerikus sorozatok:}
 
 \begin{tcolorbox}[colback=green!5!white,colframe=green!60!black,title= 1. Numerikus sorozat határértéke]
-    \begin{itemize}
-        \item Egy függvényt numerikus sorozatnak nevezünk, ha értelmezési tartománya \(\mathbb{N}^+ \)\\
-        \textbf{Jelölései:} \(a_n\), \((a:n)\);\\
-        \textbf{Megadása:} explicit alak, rekurzív, leírás.
-        \item \textbf{Tétel:} Az \((a_n)\) konvergens és határértéke az \(a \in \mathbb{R} \) akkor és csak akkor, ha bármely pozitív \(\varepsilon\)-hoz létezik olyan \(N(\varepsilon)\) küszöbindex (küszöbszám), hogy a sorozat \(N(\varepsilon)\)-nál nagyobb indexű elemei már az \("a"\) \(\varepsilon\)-sugarú környezetébe esnek.
-    \end{itemize}
-    \textbf{Következmény:}\\
-    Ha egy sorozatnak véges sok elemét megváltoztatjuk, vagy a sorozathoz véges sok elemet
-hozzáveszünk/elhagyunk belőle, akkor sem a konvergencia, sem a határérték nem változik
-meg!
+Az \((a_n)\) sorozatot konvergens és határértéke az \(a \in R\) akkor és csak akkor, ha bármely \(\varepsilon > 0\) értékhez
+létezik olyan \(N(\varepsilon)\) küszöbindex, hogy a sorozat \(N(\varepsilon)\)-nél nagyobb indexű elemei az az \(\varepsilon\) sugarú környezetében vannak.
+Az \((a_n)\) sorozatot konvergens és határértéke az \(a \in R\) akkor és csak akkor, ha bármely \(\varepsilon > 0\) sugarú
+környezetén kívül a sorozatnak csak véges sok eleme van.
 \end{tcolorbox}
 
 \begin{tcolorbox}[colback=green!5!white,colframe=green!60!black,title= 2. Konvergens{,} divergens sorozat]
     \begin{itemize}
-        \item \textbf{Definíció} Az \((a_n)\) konvergens, ha van olyan \(a \in R\) szám, hogy minden \(\varepsilon > 0\) valós szám esetén létezik \(N(\varepsilon)\) valós küszöbszám, hogy
+        \item \textbf{Definíció:} Az \((a_n)\) konvergens, ha van olyan \(a \in R\) szám, hogy minden \(\varepsilon > 0\) valós szám esetén létezik \(N(\varepsilon)\) valós küszöbszám, hogy
     \end{itemize}
         $$\left\lvert a_n -a\right\rvert < \varepsilon,\hspace{5pt}ha\hspace{5pt}n > N(\varepsilon)$$
-        $$azaz$$
-        $$a- \varepsilon < a_n< a+\varepsilon$$
     \begin{itemize}
         \item Az \("a"\) számot az \((a_n)\) határértékének hívjuk, és a \(\lim_{n \to \infty} a_n = a\)  vagy az \(a_n \to a\), ha \(n \to \infty \) jelölést használjuk.
         \item Az \((a_n)\) divergens, ha nem konvergens.
@@ -201,18 +184,14 @@ meg!
 \begin{itemize}
     \item Konvergens sorozat korlátos.
     \item Monoton korlátos sorozat konvergens.
-    \item Monoton, nem korlátos sorozatnak van határértéke.
-    \item konvergens \(\rightarrow\) van határértéke
     \item van határértéke/torlódási pontjai \(\rightarrow\) nem biztos, hogy konvergens
     \item \textbf{Bolzano-Weierstrass-tétel:} minden korlátos sorozatnak van konvergens részsorozata.
 \end{itemize}
 \end{tcolorbox}
 
 \begin{tcolorbox}[colback=green!5!white,colframe=green!60!black,title= 3. Nevezetes sorozatok]
-    Olyan sorozatok, amelyek határértékét nem kell bizonyítani, csak felhasználni!
-    \begin{itemize}
-        \item \textbf{Bernoulli-féle egyenlőtlenség:} ha \(x \geq  -1\), akkor \((1+x)^n \geq 1 + n\cdot x\)
-    \end{itemize}
+    Olyan sorozatok, amelyek határértékét nem kell bizonyítani, csak felhasználni!\\\\
+    \textbf{Bernoulli-féle egyenlőtlenség:} ha \(x \geq  -1\), akkor \((1+x)^n \geq 1 + n\cdot x\)
     \begin{enumerate}
         \item \(a^n \to 0\), ha \(\left\lvert a\right\rvert <1\)\\
         \(a^n \to 1\), ha \(a=1\)\\
@@ -228,37 +207,32 @@ meg!
 \end{tcolorbox}
 
 \begin{tcolorbox}[colback=green!5!white,colframe=green!60!black,title= 4. Cauchy sorozat]
-    \begin{itemize}
-        \item \textbf{Definíció:} Az \((a_n)\)-t Cauchy-sorozatnak nevezzük, ha minden \(\varepsilon > 0\) esetén \(\exists N(\varepsilon)\) küszöbindex, hogy: 
+        \textbf{Definíció:} Az \((a_n)\)-t Cauchy-sorozatnak nevezzük, ha minden \(\varepsilon > 0\) esetén \(\exists N(\varepsilon)\) küszöbindex, hogy: 
         \begin{center}
             \(\left\lvert a_n -a_m\right\rvert  < \varepsilon\), ha \(n,m > N(\varepsilon)\) \(\hspace{15pt}\) \((n,m \in N)\)
         \end{center}
-        \item \textbf{Tétel:} Cauchy-féle konvergencia kritérium (szükséges ÉS elégséges feltétel). Az \((a_n)\) akkor és csak akkor konvergens, ha Cauchy sorozat!
-    \end{itemize}
+        \textbf{Tétel:} Cauchy-féle konvergencia kritérium (szükséges és elégséges feltétel). Az \((a_n)\) akkor és csak akkor konvergens, ha Cauchy sorozat!
 \end{tcolorbox}
 
 \begin{tcolorbox}[colback=green!5!white,colframe=green!60!black,title= 5. Torlódási pont]
-    \begin{itemize}
-        \item \textbf{Definíció:} A \(h\) a \(H\) halmaz torlódási pontja, ha \(h\) bármely környezetében van \(H\)-nak \(h\)-tól
+        \textbf{Definíció:} A \(h\) a \(H\) halmaz torlódási pontja, ha \(h\) bármely környezetében van \(H\)-nak \(h\)-tól
         különböző eleme. A \(t\) szám a sorozat torlódási pontja, ha \(t\) akármilyen kicsi környezete a sorozat végtelen sok
         elemét tartalmazza. Például: \((-1)^n\)
-    \end{itemize}
 \end{tcolorbox}
 \newpage
 
 \textbf{Függvények, derivált:}
 
 \begin{tcolorbox}[colback=green!5!white,colframe=green!60!black,title= 1. Függvények{,} értelmezési tartomány{,} értékkészlet]
-    \begin{itemize}
-        \item \textbf{Függvény:} ha az \(A\) (nemüres) halmaz minden egyes eleméhez hozzárendeljük a \(B\)
+        \textbf{Függvény:} ha az \(A\) (nemüres) halmaz minden egyes eleméhez hozzárendeljük a \(B\)
         (nemüres) halmaz pontosan egy elemét, akkor ezt a leképezést függvénynek nevezzük.
-        \item \textbf{Értelmezési tartomány:} azon elemek halmaza, melyekhez a függvény hozzárendel
+        $$f:A \to B$$
+        \textbf{Értelmezési tartomány:} azon elemek halmaza, melyekhez a függvény hozzárendel
         egy-egy elemet a B halmazból, jelen esetben ez az A halmaz.
         $$D_f = A$$
-        \item \textbf{Értékkészlet:} A képhalmaz, azaz a \(B\) halmaz azon elemei, melyeket az \(f\) függvény
+        \textbf{Értékkészlet:} A képhalmaz, azaz a \(B\) halmaz azon elemei, melyeket az \(f\) függvény
         ténylegesen hozzárendel az \(A\) valamelyik eleméhez. Az értékkészlet tehát része a képhalmaznak:
         $$R_f \subset B$$
-    \end{itemize}
 \end{tcolorbox}
 
 \begin{tcolorbox}[colback=green!5!white,colframe=green!60!black,title= 2. Függvény határérték]
@@ -309,16 +283,14 @@ $$\lim_{x \to a} f(x) = f(a) $$
         Az f függvény folytonos az \([a, b]\)-on, ha folytonos \(]a, b[\)-on és \(a\)-ban balról, \(b\)-ben
         jobbról folytonos.
     \end{itemize}
-    \textbf{A folytonosság néhány nevezetes következménye:}
-    \begin{itemize}
-        \item ha \(f\) folytonos egy zárt intervallumon, akkor ott egyenletesen folytonos.
-        \item \textbf{Bolzano-tétel:} ha a függvény a zárt intervallumon folytonos, és az intervallum két
+    \textbf{A folytonosság néhány nevezetes következménye:}\\
+        Ha \(f\) folytonos egy zárt intervallumon, akkor ott egyenletesen folytonos.\\\\
+        \textbf{Bolzano-tétel:} ha a függvény a zárt intervallumon folytonos, és az intervallum két
         végpontjában az értékei különböző előjelűek, akkor az intervallum belsejében van
-        zérushelye. Másképp: felvesz minden \(f(a)\) és \(f(b)\) közé eső értéket egy folytonos függvény egy zárt intervallumon.
-        \item \textbf{Weierstrass-tétel:} Zárt intervallumon folytonos függvény felveszi a minimumát és a
+        zérushelye. Másképp: felvesz minden \(f(a)\) és \(f(b)\) közé eső értéket egy folytonos függvény egy zárt intervallumon.\\\\
+        \textbf{Weierstrass-tétel:} Zárt intervallumon folytonos függvény felveszi a minimumát és a
         maximumát is függvényértékként; továbbá minden olyan értéket, ami a legnagyobb és
         legkisebb érték közé esik.
-    \end{itemize}
 
 \end{tcolorbox}
 
@@ -333,28 +305,132 @@ képezzük le az \(X\) halmaz elemeire, akkor ez a fordított leképezés által
 \end{tcolorbox}
 
 \begin{tcolorbox}[colback=green!5!white,colframe=green!60!black,title= 5. Derivált]
-    \begin{itemize}
-    \item  Legyen \(f:I \subset R \to R\) függvény értelmezve az \(x \in I\) pontban és annak egy környezetében. 
-    \item Ha \(x \neq  a\), akkor az \(\frac{f(x)-f(a)}{x-a}\) hányadost differenciahányadosnak nevezzük.
-    \item Ha létezik és véges a \(Lim_{x\to a}\frac{f(x)-f(a)}{x-a}\) határérték, akkor azt az \(f\) függvény deriváltjának vagy \("a"\) pontbeli differenciálhányadosának nevezzük és a \(\frac{d f(a)}{d x}\) vagy \(f'(a)\) jelöléseket használjuk.
-    \item Ha \(x\)-szel elkezdek közelíteni \(a\)-hoz: a szelőkből érintő lesz. \(m = tan(\alpha) =\frac{f(x)-f(a)}{x-a}\)
-    \item Az érintő egyenlete: \(y = f'(a)(x - a) + f(a) \sim  m(x - x_0) = y - y_0\) átrendezve.
-    \item Adott pontbeli derivált = adott pontbeli érintő meredeksége!
-    \item \textbf{Definíció:} az \(f:[a; b] \to R\) függvény balról differenciálható a \(b\) pontban, ha létezik és véges a \(Lim_{x \to b-}\frac{f(x)-f(b)}{x-b}\) egyoldali határérték.
-    \item \textbf{Definíció:} az \(f:[a; b] \to R\) függvény jobbról differenciálható az \(a\) pontban, ha létezik és véges a \(Lim_{x \to a+}\frac{f(x)-f(a)}{x-a}\) egyoldali határérték.
-    \\Eszerint megkülönböztetünk bal- és jobboldali deriváltat.
-    \item \textbf{Tétel:} az \(f:I \to R\) függvény differenciálható az \(a \in I\) pontban \(\Longleftrightarrow\)  ha létezik a bal- és jobboldali deriváltja \(a\)-ban és ezek egyenlők.
-    \item \textbf{Tétel:} ha az \(f\) függvény differenciálható az \(x_0\) pontban, akkor ott folytonos.
-    \item \textbf{Definíció:} az \(f: ]a; b[ \to R\) függvény differenciálható \(]a;b[\)-on, ha differenciálható \(\forall x \in]a; b[\) pontban.
-        Az \(f:[a; b] \to R\) függvény differenciálható \([a;b]\)-on, ha differenciálható \(]a; b[ \)-on és \(a\)-ban jobbról, \(b\)-ben balról differenciálható.
-\end{itemize}
-
+Ha létezik és véges az alábbi differenciálhányados határértéke:\\
+$$Lim_{x\to a}\frac{f(x)-f(a)}{x-a}$$ \\
+akkor azt az \(f\) függvény deriváltjának vagy \("a"\) pontbeli differenciálhányadosának nevezzük.\\ 
+\textbf{Jelölés:} $$\frac{d f(a)}{d x} = f'(a)$$
 \end{tcolorbox}
 
 \begin{tcolorbox}[colback=green!5!white,colframe=green!60!black,title= 6. Lokális szélsőérték definíciója és feltétele]
+Legyen \(f : I \subset  R \to R\); \(a\subset  I\)\\
+    Azt mondjuk, hogy \(f\) függvénynek a pontban lokális maximuma van, ha létezik \(\delta > 0\), hogy:
+    $$f(x) \leq  f(a) (\forall  x \in K)$$
+    Azt mondjuk, hogy \(f\) függvénynek a pontban lokális minimuma van, ha létezik \(\delta > 0\), hogy:
+    $$f(x) \geq  f(a) (\forall  x \in K)$$
+    \textbf{Szükséges feltétel:}\\
+    Ha \(f : I \subset  R \to R\) differenciálható függvény és \(f\)-nek  \(\alpha \in int.\hspace{5pt}I-ben\) (\(I\) belseje) szélsőértéke van, akkor\(f'(\alpha)=0\)\\\\
+    \textbf{Elégséges feltétel:}\\
+    Ha \(f : I \subset  R \to R\) differenciálható függvény és \(\alpha \in int. \hspace{5pt}I\) továbbá létezik \(r > 0\), és teljesül az alábbi
+feltétel, akkor \(f\)-nek \(\alpha\)-ban lokális minimuma van.\\
+$$f'(x) \leq 0 \to x\in](\alpha -r); \alpha[$$
+$$f'(x) \geq 0 \to x\in]\alpha; (\alpha + r)[$$
+    Ha \(f : I \subset  R \to R\) differenciálható függvény és \(\alpha \in int. \hspace{5pt}I\) továbbá létezik \(r > 0\), és teljesül az alábbi
+feltétel, akkor \(f\)-nek \(\alpha\)-ban lokális maximuma van.
+$$f'(x) \geq 0 \to x\in](\alpha -r); \alpha[$$
+$$f'(x) \leq 0 \to x\in]\alpha; (\alpha + r)[$$
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=green!5!white,colframe=green!60!black,title= 7. L'Hôpital szabály]
+    Legyen \(f\) és \(g\) differenciálható függvények az \(\alpha\) pont egy környezetében, továbbá:
+    \begin{center}
+        \(Lim_{x \to \alpha} f(x)=Lim_{x \to \alpha} g(x)=0\) \hspace{10pt} vagy \hspace{10pt} \(\left\lvert Lim_{x \to \alpha} f(x) \right\rvert = \left\lvert Lim_{x \to \alpha} g(x) \right\rvert = \infty  \)\\
+        \(\alpha \in \{0; \pm \infty \}\)
+    \end{center}
+    Ekkor: 
+    $$\frac{Lim_{x \to \alpha} f'(x)}{Lim_{x \to \alpha} g'(x)} = \frac{Lim_{x \to \alpha} f(x)}{Lim_{x \to \alpha} f(x)} $$
+\end{tcolorbox}
+\newpage
+\textbf{Középérték tételek és Integrálás:}
+
+\begin{tcolorbox}[colback=green!5!white,colframe=green!60!black,title= 1. Lagrange középérték tétel]
+    Legyen \(f : I \subset R \to R\) folytonos \([a; b]\) intervallumon és differenciálható \(]a; b[\) intervallumon. Ekkor
+létezik olyan \(\delta \in ]a; b[\) hogy:
+$$f'(\delta) = \frac{f(b)-f(a)}{b-a}$$
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=green!5!white,colframe=green!60!black,title= 2. Rolle középérték tétel]
+    Legyen \(f\) folytonos \([a; b]\) intervallumon és differenciálható \(]a; b[\) intervallumon, továbbá \(f(a) = f(b) = 0\)
+Ekkor létezik \( \xi \in ]a; b[\) melyre teljesül, hogy:
+$$f'(\xi) = 0$$
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=green!5!white,colframe=green!60!black,title= 3. Cauchy középérték tétel]
+    Legyen \(f\) és \(g\) függvények folytonosak \([a; b]\) intervallumon és differenciálhatóak \(]a; b[\) intervallumon,
+valamint tegyük fel, hogy \(g'(x) \neq 0\) bármely \(x \in ]a; b[\) esetén. Ekkor létezik olyan \(\delta \in]a; b[\) hogy:
+$$\frac{f(b)-f(a)}{g(b)-g(a)} = \frac{f'(\delta)}{g'(\delta)}$$
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=green!5!white,colframe=green!60!black,title= 4. Riemann-Integrálhatóság]
+    Az \(f\) függvény Riemann-integrálható \([a; b]\) intervallumon, ha a Darboux-féle alsó- és felső-integrálja
+megegyezik. Ezt a közös értéket az \(f\) függvény Riemann-integráljának nevezzük.
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=green!5!white,colframe=green!60!black,title= 5. Newton-Leibniz formula]
+    Legyen \(f\) függvény Riemann-integrálható \([a; b]\) intervallumon és \(F : [a; b] \to \mathbb{R} \) olyan primitív függvény,
+hogy \(F\) folytonos \([a; b]\) intervallumon, \(F\) differenciálható \(]a; b[\) intervallumon és \(F'(x) = f(x)\) bármely
+\(x \in ]a; b[\) Ekkor:
+$$\int_{a}^{b} f = F(b)-F(a) $$
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=green!5!white,colframe=green!60!black,title= 6. Improprius integrál]
+    Legyen \((a; b) \in \mathbb{R}_b \) és \((a < b)\) valamint
+    \begin{enumerate}
+        \item minden \([x; y] \subset  ]a; b[\) esetén \(f\) Riemann-int. \([x; y]\) intervallumon és \((x; y) \subset \mathbb{R}\)
+        \item létezik olyan \(c \in \mathbb{R}  (a < c < b)\), hogy az alábbi határértékek léteznek és végesek:
+    \end{enumerate}
+    \begin{center}
+        \(Lim_{x \to \alpha }\int_{x}^{c} f(t) \,dt\) \(\hspace{15pt}\) és \(\hspace{15pt}\) \(Lim_{y \to b }\int_{c}^{y} f(t) \,dt\)
+    \end{center}
+    Ekkor az \(I:= Lim_{x \to \alpha }\int_{x}^{c} f(t) \,dt +  Lim_{y \to b }\int_{c}^{y} f(t) \,dt \) összeget az \(f\) függvény improprius integráljának nevezzük \(]a; b[\) intervallumon és \(\int_{a}^{b} f(b) \,dt \) jelöljük.\\\\
+    Azt is mondjuk, hogy az \(f\) függvény improprius Riemann-integrálja az \(]a; b[\) intervallumon konvergens.
+Ha az 1. feltétel teljesül, de a 2. feltétel nem, akkor az \(f\) függvény improprius Riemann-integrálja
+divergens.
+\end{tcolorbox}
+
+\newpage
+\textbf{Numerikus sorok:}
+
+\begin{tcolorbox}[colback=green!5!white,colframe=green!60!black,title= 1. Numerikus sor fogalma]
+    Az \(a_n\) numerikus sorozat tagjaiból képzett végtelen összeget numerikus sornak nevezzük. Jelölése:
+    $$\sum_{n = 1}^{\infty} a_n $$
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=green!5!white,colframe=green!60!black,title= 2. Numerikus sor konvergenciája]
+A \(\sum_{n = 1}^{\infty} a_n\) numerikus sor konvergens, akkor és csak akkor, ha bármely \(\varepsilon\) > 0 esetén létezik olyan \(N(\varepsilon)\)
+hogy:
+$$\left\lvert a_{n+1} + a_{n+2} + ... + a_m\right\rvert < \varepsilon \hspace{40pt} (n, m >N_{(\varepsilon)}$$
+
+\textbf{Feltételes konvergencia:}\\
+Ha \(\sum a_n\) sor konvergens, de nem abszolút konvergens (abszolút konvergens, ha \(\sum \left\lvert a_n\right\rvert \)  konvergens), akkor feltételes konvergenciáról beszélünk.
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=green!5!white,colframe=green!60!black,title= 3. Numerikus sor divergenciája]
+    Ha a numerikus sor nem konvergens, akkor divergens.
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=green!5!white,colframe=green!60!black,title= 4. Konvergencia tesztek]
     \begin{itemize}
-        \item To be continued
+        \item \textbf{Majorálás/minorálás:}\\
+        Legyen \(\sum a_n\) és \(\sum b_n\) nemnegatív tagú sorok, melyekre teljesül az hogy \(a_n < b_n\) bármely \(n \in N\)
+        esetén, ekkor:
+        \begin{itemize}
+        \item \textbf{Minorálás:} Ha \(\sum a_n\) divergens, akkor \(\sum b_n\) is az
+        \item \textbf{Majorálás:} Ha \(\sum b_n\) konvergens, akkor \(\sum a_n\) is az
+        \end{itemize}
     \end{itemize}
+    \begin{itemize}
+        \item \textbf{D'Alambert-féle hányadosteszt:}\\
+        Legyen \(\sum a_n\) egy pozitív tagú sor, ha létezik olyan \(0 < q < 1\) valós szám, amelyre az \(n \in N\) feltétel
+mellett az alábbi egyenlet teljesül, akkor konvergens:
+    \end{itemize}
+    $$\frac{a_n +1}{a_n} < q$$
+    \begin{itemize}
+        \item \textbf{Cauchy-féle gyökteszt:}\\
+        Legyen \(\sum a_n\) egy nemnegatív tagú sor, ha létezik olyan \(0 < q < 1\) valós szám, amelyre az \(n \in N\)
+feltétel mellett az alábbi egyenlet teljesül, akkor konvergens:
+    \end{itemize}
+    $$\sqrt[n]{a_n} < q$$
 \end{tcolorbox}
 
 \end{document}
