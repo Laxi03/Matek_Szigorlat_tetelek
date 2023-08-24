@@ -1,4 +1,4 @@
-\documentclass[12pt,a4paper]{article}
+\documentclass[11pt,a4paper]{article}
 
 % USEPACKAGE LISTA
 \usepackage[utf8]{inputenc}
@@ -49,7 +49,7 @@
         \item To be continued
     \end{itemize}
 \end{tcolorbox}
-\begin{tcolorbox}[colback=blue!5!white,colframe=blue!60!black,title= MINTA!!]
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!70!black,title= MINTA!!]
     \begin{itemize}
         \item To be continued
     \end{itemize}
@@ -431,6 +431,79 @@ mellett az alábbi egyenlet teljesül, akkor konvergens:
 feltétel mellett az alábbi egyenlet teljesül, akkor konvergens:
     \end{itemize}
     $$\sqrt[n]{a_n} < q$$
+\end{tcolorbox}
+
+\newpage
+\begin{center}
+    \textbf{Matematika G2 szóbeli tételek}
+\end{center}
+\textbf{Lineáris algebra I:}
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!70!black,title= 1. Csoport{,} gyűrű{,} test]
+    \textbf{Félcsoport:} olyan halmaz, melyben a kétváltozós műveletek asszociatívak (pl. természetes számok esetén az összeadás)\\\\
+        \textbf{Csoport:} Legyen \(G\neq 0\) és egy \(\circ \) művelet (szorzás). Ekkor \((G, \circ )\) csoport, ha teljesülnek az alábbiak:
+        \begin{enumerate}
+            \item \((a \circ b) \circ c = a \circ (b \circ c)\) minden \(a, b, c \in G\) esetén
+            \item bármely \(e \in G\), hogy \(a \circ e = e \circ a = a\) minden \(a \in G\) esetén (létezik az egységelem, \(e\), amely asszociatív)
+            \item minden \(a \in G\) esetén létezik \(a' \in G\), hogy \(a \circ a'=a' \circ a = e\) (létezik inverzelem)
+        \end{enumerate}
+        \textbf{Ábel-csoport:} olyan halmaz, melyben a kétváltozós műveletek asszociatívak és kommutatívak is ill. létezik a zérus elem és az inverz elem\\\\
+        \textbf{Gyűrű:}
+        Legyen \(R\neq 0\) és \(+, \circ \) két művelet. Ekkor \((R, +, \circ )\) gyűrű ha teljesülnek az alábbiak:
+        \begin{enumerate}
+            \item \((R, +)\) Ábel csoportot alkot (Ábel csoport = kommutatív csoport)
+            \item A  művelet asszociatív (csoportosítható) \((a \circ b) \circ c = a \circ (b \circ c)\) minden \(a, b, c \in R\) esetén
+            \item A \(\circ \) művelet disztributív \(+\)-ra nézve (összekapcsolható) \((a + b) \circ c = a \circ c + b \circ c\) minden \(a, b, c \in R\) esetén
+        \end{enumerate}
+        \textbf{Test:} 
+        Legyen \(T \neq 0\) és \(+, \circ \) két művelet. Ekkor \((T, +, \circ)\) test ha teljesülnek az alábbiak:
+        \begin{enumerate}
+            \item (T, +) Ábel csoportot alkot
+            \item A \(\circ\) művelet legyen asszociatív (csoportosítható) \((a \circ b) \circ c = a \circ (b \circ c)\) minden \(a, b, c \in R\) esetén
+            \item A \(\circ\) művelet legyen disztributív azaz \((a + b) \circ c = a \circ c + b \circ c\) minden \(a, b, c \in R\) esetén
+            \item Létezik \(e \in G\), hogy \(a \circ e = e \circ a = a\) minden \(a \in T\) esetén (létezik egységelem a második műveletre)
+            \item A \(+\) műveletekhez tartozó egységelem kivételével bármely \(a \in G\) esetén létezik \(a' \in G\), hogy \(a \circ a' = a' \circ a = e\) (létezik az inverz elem, kivéve az első művelethez \((+)\) tartozó egységelem
+            esetében)
+        \end{enumerate}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!70!black,title= 2. Euklideszi tér]
+Euklideszi térnek nevezzük azon \(T\) számtest feletti vektortereket, amelyekben a verktorterek axiómái értelmezve vannak, valamint az ún. skaláris szorzást:    
+    \begin{enumerate}
+        \item A skaláris szorzat \(V\)-beli rendezett párokhoz egy \(T\)-beli nemnegatív elemet rendelő függvény, vagyis:
+        $$\forall \underline{a},\underline{b} \in V,<\underline{a},\underline{b}>:V \times V \to T$$
+        \item a skaláris szorzat kommutatív:
+        $$\forall \underline{a}, \underline{b} \in V, <\underline{a}, \underline{b} > =<\underline{b}, \underline{a} >$$
+        \item A skalárszorzás kiemelhető:
+        $$\forall \underline {a},\underline{b} \in V, \lambda \in T, <\lambda \underline{a}, \underline{b} > = \lambda <\underline{a}, \underline{b}>$$
+        \item Az összeg asszociatív:
+        $$\forall \underline{a}, \underline{b}, \underline{c} \in V, <\underline{a} + \underline{b},\underline{c}> = <\underline{a}, \underline{c}> + <\underline{b}, \underline{c}>$$
+    \end{enumerate}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!70!black,title= 3. Vektortér]
+    Legyen \(V\) nem üres halmaz, \(+, \circ \) műveletek, \(T\) test. \((V, +, \circ)\) \(T\) test feletti vektortér, ha:
+    \begin{enumerate}
+        \item \((V, +)\) Ábel-csoport
+        \item valamint:
+        \begin{center}
+        \(\forall \alpha, \beta \in T,\) és \(\underline{x} \in V : (\alpha \circ \beta) \circ \underline{x} = a\circ (\beta \circ \underline{x})\)
+        \end{center}
+        \item Ha \(\epsilon\)  a \(T\)-beli egység, akkor:
+        $$\forall \underline{x} \in V: \epsilon \circ \underline{x} = \underline{x}$$
+        \begin{center}
+            \(\forall \alpha, \beta \in T \) és \(\underline{x},\underline{y} \in V: (\alpha +\beta) \circ \underline{x} = \alpha \circ \underline{x} + \beta \circ \underline{x}\) (rendes \(+\))
+        \end{center}
+        valamint: 
+        \begin{center}
+            \(\alpha \circ (\underline{x}+\underline{y}) = \alpha \circ \underline{x} + \alpha \circ \underline{y}\) (\(V\)-beli \(+\))
+        \end{center}
+    \end{enumerate}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!70!black,title= 4. Vektorok lineáris függősége és függetlensége]
+    \begin{itemize}
+        \item To be continued
+    \end{itemize}
 \end{tcolorbox}
 
 \end{document}
