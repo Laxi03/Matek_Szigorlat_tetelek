@@ -20,6 +20,7 @@
 \usepackage{bm}
 \usepackage{tikz, tcolorbox}
 \usepackage{verbatim}
+\usepackage{amsmath,esint}
 
 \usepackage{pgfplots}
 \pgfplotsset{height = 10cm, width=15cm,compat=1.9}
@@ -465,7 +466,6 @@ feltétel mellett az alábbi egyenlet teljesül, akkor konvergens:
             esetében)
         \end{enumerate}
 \end{tcolorbox}
-
 \begin{tcolorbox}[colback=blue!5!white,colframe=blue!70!black,title= 2. Euklideszi tér]
 Euklideszi térnek nevezzük azon \(T\) számtest feletti vektortereket, amelyekben a verktorterek axiómái értelmezve vannak, valamint az ún. skaláris szorzást:    
     \begin{enumerate}
@@ -479,7 +479,6 @@ Euklideszi térnek nevezzük azon \(T\) számtest feletti vektortereket, amelyek
         $$\forall \underline{a}, \underline{b}, \underline{c} \in V, <\underline{a} + \underline{b},\underline{c}> = <\underline{a}, \underline{c}> + <\underline{b}, \underline{c}>$$
     \end{enumerate}
 \end{tcolorbox}
-
 \begin{tcolorbox}[colback=blue!5!white,colframe=blue!70!black,title= 3. Vektortér]
     Legyen \(V\) nem üres halmaz, \(+, \circ \) műveletek, \(T\) test. \((V, +, \circ)\) \(T\) test feletti vektortér, ha:
     \begin{enumerate}
@@ -499,10 +498,249 @@ Euklideszi térnek nevezzük azon \(T\) számtest feletti vektortereket, amelyek
         \end{center}
     \end{enumerate}
 \end{tcolorbox}
-
 \begin{tcolorbox}[colback=blue!5!white,colframe=blue!70!black,title= 4. Vektorok lineáris függősége és függetlensége]
     \(\{ b_1, b_2, ..., b_n\}\) vektor lineárisan független, amennyiben az alábbi egyenletnek csak a triviális megoldása létezik, ellenkező esetben lineárisan függő:
-    $$\lambda_1 \underline{b_1} +...+\lambda_n \underline{b_n}$$
+    $$\lambda_1 \underline{b}_1 +...+\lambda_n \underline{b}_n = 0$$
+\end{tcolorbox}
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!70!black,title= 5. Lineáris egyenletrendszer]
+    A véges sok elsőfokú egyenletet és véges sok ismeretlent tartalmazó egyenletrendszert \textbf{lineáris egyenletrendszernek} nevezzük.
+\end{tcolorbox}
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!70!black,title= 6. Lineáris egyenletrendszer megoldhatóságának szükséges és elégséges feltétele]
+    A lineáris egyenletrendszer megoldásának szükséges és elégséges feltétele, az \(A\underline{x}= \underline{b}\) lineáris egyenletrendszer pontosan
+akkor megoldható, ha \(rg(A\mid \underline{b})= rg(A)\)
+\end{tcolorbox}
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!70!black,title= 7. Mátrix determináns]
+    Tekintsük az \(\mathbb{R}^n\) tér \(\underline{a}_1, ..., \underline{a}_n\) vektorait és ehhez hozzárendelünk egy valós számot amit determinánsnak nevezünk és
+\(det(\underline{a}_1; \underline{a}_2,..., \underline{a}_n)\)-nel jelöljük.
+\begin{center}
+    \fbox{\includegraphics[scale = 0.5]{det.png}}\\
+\end{center}
+\end{tcolorbox}
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!70!black,title= 8. Mátrix inverze]
+    Az \(A \in M_{n\times n}\) mátrix inverzén \(A^{-1}\)-gyel jelölt \(n \times n\)-es mátrixot értünk, amelyre igaz, hogy:
+    $$\underline{\underline{A}} * \underline{\underline{A}}^{-1} = \underline{\underline{A}}^{-1} * \underline{\underline{A}} = \underline{\underline{E}}$$
+    \begin{center}
+        \fbox{\includegraphics[scale = 0.7]{inverse.png}}\\
+    \end{center}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!70!black,title= 9. Mátrix rangja]
+    A mátrix rangjának nevezzük a mátrix vektorai közül lineárisan függetlenek maximális számát.
+    \begin{center}
+        \fbox{\includegraphics[scale = 0.5]{rank.png}}\\
+        Az alábbi mátrix rangja 2.
+    \end{center}
+\end{tcolorbox}
+\newpage
+
+\textbf{Lineáris algebra II:}
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!70!black,title= 1. Lineáris leképezés fogalma]
+    \(V_1\) és \(V_2\) ugyanazon test \((\mathbb{R};\mathbb{C})\) feletti vektortérnek. Legyen \(V_1\to V_2\) leképezés, melyet lineáris leképezésnek nevezzük, ha:
+    $$\varphi(\underline{a}+\underline{b}) = \varphi (\underline{a}) + \varphi(\underline{b})$$
+    $$\varphi (\alpha \underline{a}) = \alpha \varphi(\underline{a})$$
+    Megjegyzés: $$\varphi(\underline{0}) = \underline{0}$$
+\end{tcolorbox}
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!70!black,title= 2. Rang-nullitás tétele]
+    Tetszőleges \(\varphi : V_1 \to V_2\) leképezés esetén igaz, hogy: \(def(\varphi)+rg(\varphi) = dim(V_1)\). Ebből \(def(\varphi)\) a magtér rangja. A magtér
+\(V_1\) részhalmaza, és a benne lévő elemek képe nullvektor. A képtér \(V_2\) részhalmaza, és a benne lévő elemek a képei \(V_1\) elemeinek.
+\end{tcolorbox}
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!70!black,title= 3. Magtér]
+    \textbf{Magtér:} Legyen \(\varphi : V_1 \to V_2\) lineáris leképezés:
+    $$Ker(\varphi) := \{\underline{v}\mid \underline{v} \in V_1 \wedge \varphi(\underline{v}=\underline{0})\} $$
+    a \(\varphi\) magtere.
+\end{tcolorbox}
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!70!black,title= 4. Sajátvektor{,} sajátérték]
+    \begin{enumerate}
+        \item A mátrixnak \(\lambda\) a sajátértéke, ha létezik olyan \(\underline{v}\) nem nulla vektor, hogy: \(\underline{\underline{A}} * \underline{v} = \lambda *\underline{v}\)
+        \item Képlet:
+        $$A' = \underline{\underline{C}}^{-1} * \underline{\underline{A}} * \underline{\underline{C}}$$
+        \item \(\varphi: V \to V\) keressünk azon vektorokat, amelyekre igaz: \((A-\lambda \underline{\underline{E}})*\underline{v} = 0\). Ennek akkor van megoldása, ha:
+        $$det(\underline{\underline{A}}-\lambda\underline{\underline{E}})=0$$
+        \item Egy vektornak \(\infty\) saját vektora van. Lineárisan független egyenletrendszerek száma: \(\underline{\underline{A}}_{m\times n}\to max\) n db
+        \item \(\alpha\)-t a \(v\) sajátvektorhoz tartozó sajátértéknek mondjuk.
+    \end{enumerate}
+\end{tcolorbox}
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!70!black,title= 5. Bázistranszformáció]
+    Legyen \( \{ \underline{b}_1, ..., \underline{b}_n \}\) és \(\{\hat{ \underline{b}}_1, ..., \hat{\underline{b}}_n \}\)bázis \(V\)-ben, ekkor az egyikről a másikra való áttérés \(S\) mátrixa:
+    $$\hat{\underline{b}}_1 = \sum_{i = 1}^{n} s_i \underline{b}_i  $$
+    $$\hat{\underline{b}}_1 = \sum_{i = 1}^{n} s_{ij} \underline{b}_i  $$
+    $$\hat{\underline{b}}_1 = \sum_{i = 1}^{n} s_{in} \underline{b}_i  $$
+    $$\begin{pmatrix}
+        s_{1,1} & s_{1,2}  &...  & s_{1,n} \\
+        s_{2,1} &s_{2,2}  &...  & s_{2,n} \\ 
+        \vdots & \vdots  &  \ddots &  \\
+        s_{n,1}&s_{n,2}  & ... & s_{n,n}
+        \end{pmatrix}$$
+\end{tcolorbox}
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!70!black,title= 6. Hasonló mátrix]
+    \(A\) és \(B\) mátrixok hasonlóak, ha létezik olyan \(X\) reguláris mátrix, hogy:
+    $$\underline{\underline{A}} = \underline{\underline{X}}^{-1}* \underline{\underline{B}}*\underline{\underline{X}}$$
+\end{tcolorbox}
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!70!black,title= 7. Ortogonális mátrix]
+    Egy mátrix ortogonális, amennyiben inverze megegyezik a transzponáltjával.  
+\end{tcolorbox}
+\newpage
+\textbf{Függvénysorozatok, függvénysorok:}
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!70!black,title= 1. Függvénysorozat]
+    Az \(f_n : I \subset \mathbb{R}\to \mathbb{R}\) sorozatot függvénysorozatnak nevezünk. 
+\end{tcolorbox}
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!70!black,title= 2. Függvénysor]
+Az \(f_n : I \subset \mathbb{R} \to \mathbb{R}\) függvény sorozat előállítható a:
+$$s_1(x) := f_1(x)$$
+$$s_2 := f_1(x)+f_2(x)$$
+$$s_n(x) := \sum_{i=1}^i f_n(x)$$
+az így előállított \(s_n\) sorozatot az \(f_n\) sorozatból képzett függvény sornak hívjuk, és \(\sum F_n\)-nel jelöljük.
+\end{tcolorbox}
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!70!black,title= 3. Függvénysorozat{,} függvénysor konvergenciája{,} egyenletes konvergenciája]
+    A \(\sum f_n\) függvény sor egyenletesen konvergens az \(E \subset H\) halmazon \(\Longleftrightarrow\)  ha bármely \(\varepsilon > 0\) esetén létezik
+olyan \(N(\varepsilon) : \mid s_n(x) - s_m(x)\mid < \varepsilon\); ha \(n;m > N(\varepsilon)\); \(\forall x \in E\) esetén.
+\end{tcolorbox}
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!70!black,title= 4. Weierstrass-tétel]
+    Bármely \(f_n : I \subset \mathbb{R} \) és \(\sum f_n\) a belőle képzett függvénysor,\(\sum a_n\) olyan konvergens numerikus sor, amelyre igaz: \(\mid f_n(x)\mid \leq
+a_n\); \(\forall x \in J\) esetén teljesül bármely \(x \in \mathbb{N}\) vagy egy bizonyos \(n\)-től, ekkor
+\(\sum f_n\) függvénysor egyenletesen konvergens \(J\)-n.
+\end{tcolorbox}
+\begin{tcolorbox}[colback=blue!5!white,colframe =blue!70!black,title= 5. Cauchy-Hadamard-tétel]
+    Legyne \(r\) a \(\sum_n x^n\) hatványsor konvergenciasugara:
+    \begin{enumerate}
+        \item Ha \(r = 0\) ebben az esetben a hatványsor csak az \(x_0\) pontban konvergens
+        \item Ha \(r = \infty \) a hatványsor bármyel \(x_0 \in \mathbb{R}\) esetén konvergens 
+        \item Hat \(0< r < \infty\), akkor a hatványsor abszolúz konvergens, ha \(\mid x\mid < r\), és divergens, amennyiben \(\mid x\mid >r\)
+        \item Bizonyítás: az \(a,b\) rész bizonyítása az előző tétel alapján könnyen adódik:
+        \begin{center}
+            \(! \mid x_0\mid < r, limsup \sqrt[n]{\mid a_n x_0^n\mid} = \mid x_0 \mid limsup\sqrt[n]{\mid a_n \mid} = \frac{\mid x_0 \mid}{r}\), ami \(\mid x \mid > r \Rightarrow \)
+        \end{center}
+        Létezik olya \(0 < r < 1\), hogy a \(\sum a_x x_0^n\) hatványsor a gyökteszt miatt konvergens. Mivel \(\mid x_0 \mid < r\) tetszőleges volt, így \(\forall \mid x_0 \mid < r\) esetén igaz, hogy \(\sum a_n x_0^n\) hatványsor konvergens, amennyiben \(\mid x \mid > r\), akkor a hatványsor divergens.
+    \end{enumerate}
+\end{tcolorbox}
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!70!black,title= 6. Hatványsor]
+Tegyük fel, hogy egy \(f\) függvény \(\sum a_n x^b\) hatványsor alakban előállítható. Akkor az ezt leíró hatványsor alakja az alábbi: 
+$$f(x) = \sum_{n=0}^{\infty} \frac{f^n(0)}{n!} *x^n$$
+\end{tcolorbox}
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!70!black,title= 7. Taylor-polinom{,} Taylor-sor]
+Legyen \(f: I \subset \mathbb{R} \to \mathbb{R}\) függvény, az \(x_0 \in I\) pontban legfeljebb \(p\)-szer differenciálható, ekkor  az \(f\) függvények \(x_0\) körüli \(p\)-edik Taylor polinomja:
+$$T_{f,P}(x) = \sum_{k=0}^P \frac{f^(k)}{k!}* (x-x_0)^k$$
+\textbf{Tétel:} ha az \(f\) függvény legalább \((r+1)\)-szer differenciálható az \((x, x_0)\) intervallumon, és \(f^(k), k \in 1, 2, 3, ... r\) folytonos és az \(x\) és \(x_0\) pontokban, akkor létezik olyan \(\xi \in (x; x_0)\), hogy:
+$$f(x) = \sum_{k=1}^r \frac{f^{(k)}x_0}{k!}* (x-x_0)^k + \frac{f^{(r+1)}\xi}{(r+1)!}(x-x_0)^{r+1}$$
+Ahol a masodik tag a Lagrange-féle maradéktag 
+\end{tcolorbox}
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!70!black,title= 8. Konvergencia sugár{,} konvergencia tartomány]
+Konvergencia sugár nagyságának kiszámítása:
+$$\frac{1}{r} = lim_{m \to \infty} \mid \frac{a_{k +1}}{a_k} \mid$$
+\end{tcolorbox}
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!70!black,title= 9. Fourier-sor]
+Legyen \( f : \mathbb{R} \to \mathbb{R}\) \(2l\) szerint periodikus függvény, amely a \([0, 2l]\) intervallumon Reimann integrálható, ekkor \(f\) Fourier során az alábbi függvénysort értjük:
+$$ a_0 + \sum_{k=0}^{\infty} a_k\cdot cos(\frac{k\pi x}{l}) + b_k\cdot sin(\frac{k \pi x}{l})$$
+$$a_0 = \frac{1}{2l} \int_{0}^{2l} f(x)\,dx; \hspace{10pt}b_0 = 0 $$
+$$a_k = \frac{1}{l} \int_{0}^{2l} f(x)* cos(\frac{k \pi x}{l})\,dx;$$
+$$b_k = \frac{1}{l} \int_{0}^{2l} f(x)* sin(\frac{k \pi x}{l})\,dx;$$
+\textbf{Megjegyzés:} ha az \(f\) függvény összeáll a fenti típusú függvénysor összegeként, akkor az együtthatók csak ilyenek lehetnek.
+\end{tcolorbox}
+
+\newpage
+\textbf{Többváltozós függvények:}
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!70!black,title= 1. Primitív függvény]
+Egy \(f : \mathbb{R}^n \to \mathbb{R}^k\) függvénynek \(F: \mathbb{R}^n \to \mathbb{R}\) primitív függvénye, ha \(F'= f\).
+\end{tcolorbox}
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!70!black,title= 2. \(\mathbb{R}^n \to \mathbb{R}^k \) leképezés differenciálhatósága]
+    Legyen \(U \subset \mathbb{R}^n\) nyílt halmaz, \(f : U \to \mathbb{R}^k\) leképezés. Azt mondjuk, hogy \(f\) differenciálható, az \(\underline{a} \in D_f\) pontban,
+    ha létezik \(A: \mathbb{R}^n \to \mathbb{R}^k\) lineáris leképezés, \(\omega : \mathbb{R}^n \to \mathbb{R}^k\) leképezés, melyre \(\omega(\underline{0}) = \underline{0}\), \(Lim_{\mid\mid \underline{h}\mid \mid \to 0} \dfrac{\mid \mid \omega(\underline{h})\mid\mid}{\mid \mid \underline{h} \mid \mid}\),
+    hogy:\\
+    \begin{center}
+        \(f(\underline{x}) - f(\underline{a}) = A(\underline{x} - \underline{a}) + \omega(\underline{x}- \underline{a})\). 
+    \end{center}
+    Az \("A"\)-nak megfelel egy \(M_{k\times n}\)-es mátrix. A deriválás egy leképezés.
+\end{tcolorbox}
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!70!black,title= 3. Iránymenti derivált]
+    Az iránymenti derivált, az adott irány által kimetszett függvény deriváltja. Közelebbről:
+    \begin{center}
+        \(\dfrac{\partial f}{\partial \underline{e}} = Lim_{\lambda \to 0} \frac{f(\underline{x})+ \lambda \underline{e} - f(\underline{x})}{\lambda} = <\underline{e}, gradf>\), ahol \(\mid e\mid = 1\)
+    \end{center}
+    \begin{center}
+        \fbox{\includegraphics[scale = 0.3]{iranymenti.png}}\\
+    \end{center}
+\end{tcolorbox}
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!70!black,title= 4. Parciális derivált]
+    Parciális deriváltnak nevezzük a többváltozós függvények olyan deriváltját, amikor a függvényt egy rögzített változ
+    ójának függvényeként fogjuk fel, eszerint deriválunk, miközben a többi változójelet konstans értéknek tekintjük. (A
+    koordináta-tengelyek mentén lévő irány menti derivált.)
+$$\frac{\partial f}{\partial x_i} = f'(x_i)$$
+\end{tcolorbox}
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!70!black,title= 5. Gradiens]
+    A \(z = f(x; y)\) függvény gradiense a parciális deriváltakból, mint koordinátákból alkotott vektor: \(gradf(x; y) =
+    (f'_x(x; y); f_y(x; y))\). A gradiens legfontosabb tulajdonságai:
+    \begin{itemize}
+        \item Minden pontban a gradiens merőleges a ponton áthaladó szimmetriavonalra.
+        \item A gradiens a függvény legnagyobb növekedésének irányába mutat.
+    \end{itemize}
+    $$gradf = \bigtriangledown f = [f'x_1, ..., f'x_n]$$
+\end{tcolorbox}
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!70!black,title= 6. Jacobi-mátrix]
+    A parciális deriváltak vektora vektor értékű függvényekre is defniálható. Ha \( \underline{F} : \mathbb{R}^n \to \mathbb{R}^m\) vektor értékű függvény,
+    és koordinátafüggvényei rendre \(F_1; ...; F_m\), akkor:
+    $$\underline{F}(x_1,...x_n) = (F_1(x_1,..., x_n), ... F_m(x_1, ..., x_n))$$
+    Ekkor \(F\) deriváltja az \(F_i\) (sorvektor) gradiensek oszlopvektoraként definiálható. Ennek a mezőnek a vektorgradiense
+a Jacobi -mátrix:
+$$\mathcal{J}_{\underline{F}} = grad\underline{F} = \bigtriangledown \underline{F} = \partial (F_1, ..., F_m)\partial(x_1, ..., x_n) = \begin{pmatrix}
+    \frac{\partial F_1}{\partial x_1} & ... &\frac{\partial F_1}{\partial x_n} \\ 
+     \vdots & \ddots  &\vdots \\ 
+    \frac{\partial F_m}{\partial x_1}& ... & \frac{\partial F_m}{\partial x_n}
+    \end{pmatrix} $$
+    \(m=n\)-re az eredmény egy másodfokú tenzor. Eféle tenzorok írják le például a fizikában a mechanikai feszültséget és
+az elaszticitást.
+\end{tcolorbox}
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!70!black,title= 7. Szélsőérték{,} feltételes szélsőérték]
+    A lokális szélsőérték létezésének szükséges feltétele, hogy az első rendű parciális deriváltak eltűnjenek az adott
+    pontban. Emellett a létezés elégséges feltétel, hogy az adott a pontban a következő determináns értéke pozitív.
+    $$H = \begin{vmatrix}
+        f_{xx} & f_{xy} \\ 
+        f_{yx} & f_{yy}
+        \end{vmatrix}$$
+        Egy \(f : \mathbb{R}^n \to \mathbb{R}\) függvénynek lokális minimuma van \(a\)-ban, ha \(a\)-nak van olyan \(K\) környezete, melyre \(f(a) \leq f(x)\forall x \in K\).\\\\
+        Ha egy \(f \in c^1(\mathbb{R}^n;\mathbb{R})\) függvénynek lokális szélső értéke van \(a\)-ban, akkor \(f'(a) = 0\) a nullvektor, azaz \(\partial_i f(a) = 0(\forall i =
+        1;\dots ; n)\)\\\\
+        Legyen egy \(f \in C^2(\mathbb{R}^n;\mathbb{R})\) függvényre \(f'(a) = 0\)\\
+        \begin{itemize}
+            \item Ha \(F''(a)\) sajátértékei \(>0 \Rightarrow f\)-nek lokális minimuma van \(a\)-ban
+            \item Ha \(F''(a)\) sajátértékei \(<0 \Rightarrow f\)-nek lokális maxima van \(a\)-ban
+        \end{itemize}
+        \textbf{Megjegyzés:} Többdimenziós jelenség ha \(f''(a)\)-nak van \(+\) és \(-\) sajátértéke is, akkor nincs szélsőértéke, hanem ún. nyeregpontja:
+egy irányban minimum és egy másik irányban maximum van.
+
+\begin{center}
+    \includegraphics[scale = 0.8]{saddle_point.png}\\
+\end{center}
+\end{tcolorbox}
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!70!black,title= 8. Kvadratikus formák definitsége]
+Egy \(n\) változós \(q\) kvadratikus alakot:
+\begin{enumerate}
+    \item \textbf{pozitív definitnek} nevezünk, ha bármely \(x_1; \vdots ; x_n\) esetén \(q(x_1; \vdots ; x_n) \geq 0\), és \(q(x_1; \vdots ; x_n) = 0\) csak akkor,
+    ha \(x_1 = \vdots = x_n = 0\)
+    \item \textbf{pozitív szemidefinitnek} nevezzük, ha bármely \(x_1; \vdots ; x_n\) esetén \(q(x_1; \vdots ; x_n) \geq 0\), és van olyan \((x_1; \vdots ; x_n) \neq 0\),
+    melyre igaz hogy: \(q(x_1; \vdots ; x_n) = 0\)
+    \item \textbf{negatív definitnek} nevezzük, ha bármely \(x1; \vdots ; xn\) esetén \(q(x_1; \vdots ; x_n) \leq 0\), és \(q(x_1;\vdots ; x_n) = 0\), csak akkor
+    ha: \(x_1 = \vdots = x_n = 0\)
+    \item \textbf{negatív szemidefinitnek} nevezünk, ha bármely \(x_1;\vdots ; x_n\) esetén \(q(x_1; \vdots ; x_n) \leq 0\) és van olyan \((x_1; \vdots ; x_n) \neq 0\)
+    melyre \(q(x_1; \vdots ; x_n) = 0\)
+    \item \textbf{indefinitnek} nevezünk, ha felvesz pozitív és negatív értékeket is.
+\end{enumerate}
+\end{tcolorbox}
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!70!black,title= 9. Riemann-integrálhatóság (alsó-felső Darboux-integrál)]
+\begin{enumerate}
+    \item \(\underline{S}(f) = inf\{\underline{S}(f,d)\mid d\) beosztása \(I\)-nek\(\}\)
+    \item \(\underline{S}\) neve: alsó Darboux-integrál
+    \item \(\overline{S}(f) = sup\{\overline{S}(f,d)\mid d\) beosztása \(I\)-nek\(\}\)
+    \item \(\overline{S}\) neve: felső Darboux-integrál
+\end{enumerate}
+\textbf{Megjegyzés:}
+$$\underline{S}(f,d) \leq \underline{S}(f) \leq \overline{S}(f) \leq \overline{S}(f,d) \forall d $$
+
+Legyen \(f : \mathbb{R}^n \to \mathbb{R}\) korlátos függvény. \(f\)-et Riemann-integrálhatónak mondjuk, ha \(\underline{S}f = \overline{S}f\). Ezt a közös értéket
+jelöljük.\\
+\begin{center}
+    \fbox{\includegraphics[scale = 0.5]{g2_4_9.png}}\\
+\end{center}
 \end{tcolorbox}
 
 \end{document}
