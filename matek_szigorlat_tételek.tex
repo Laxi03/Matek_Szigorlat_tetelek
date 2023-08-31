@@ -1269,7 +1269,45 @@ jelöljük.\\
        $$z(x) = z = y^{1-n} \quad\quad \text{(eredeti DE)}$$
        $$z' = \dfrac{dz}{dx} = (1-n) \cdot y^{-n} \cdot y' \quad\quad (1)$$
        Ahonnan az eredeti DE-et $y^n$-nel leosztva, a (1) egyenletet pedig $1-n$-nel leosztva és felhasználva a helyettesítést, azt kapjuk, hogy:
-       $$\dots$$
+       $$z' + (1-n)p(x) \cdot z = (1-n)q(x)$$
+       Ami már egy lineáris DE $z$-re nézve, tehát megoldható homogén-inhomogén módon.
+    \end{tcolorbox}
+
+    \begin{tcolorbox}[colback=red!5!white,colframe=red!60!black,title= 3. Riccati-féle DE]
+        \textbf{Definíció:} \\
+        Az $a(x) \cdot y' + b(x) \cdot y + c(x) \cdot y^2 = r(x)$ alakú elsőrendű, nemlineáris DE-et Riccatiféle
+        differenciálegyenletnek nevezzük, ahol $a, b, c, r: I \subset \mathbb{R} \rightarrow \mathbb{R}$ folytonos függvények. \\
+        \textbf{Megoldás:} \\
+        A Riccati-féle nemlineáris DE integrálással általában nem oldható meg. Akkor, és csak akkor tudjuk integrálással előállítani a megoldását, ha ismerjük egy partikuláris megoldását. \\
+        \textbf{Megjegyzések:}
+        \begin{itemize}
+            \item Ha $r(x) = 0$, akkor Bernoulli-féle DE-et kapunk
+            \item Ha $c(x) = 0$, akkor a DE lineáris
+        \end{itemize}
+        $y(x) = \frac{1}{z(x)} + y_p(x)$ alakban bevezetett új függvény segítségével $z$-re már lineáris DE-et kapunk, vagy $y(x) =  z(x) + y_p(x)$ típusú helyettesítéssel Bernoulli-típusúra redukálható a Riccati-féle DE. \\
+        \textbf{Megoldás helyettesítéssel:} \\
+        $y' = x + z \rightarrow y' = 1 + z'$, amit visszaírva a DE-be, leegyszerűsödik Bernoulli-ra.
+    \end{tcolorbox}
+
+    \begin{tcolorbox}[colback=red!5!white,colframe=red!60!black,title= 4. Egzakt DE]
+        \textbf{Definíció:} \\
+        Egy $P(x, y)dx + Q(x, y)dy = 0$ lakú DE-et, melyben $P, Q: D \subset \mathbb{R}^2 \rightarrow \mathbb{R}$ folytonos függvények, egzakt DE-nek nevezzük, ha az alábbi két parciális derivált folytonos és egyenlőek:
+        $$\dfrac{\partial P}{\partial y} = \dfrac{\partial Q}{\partial x}$$
+        \textbf{Megoldás:} \\
+        DE megoldása $F(x, y) = C$ alakú (a skalárpotenciál kereséséhez hasonló). Létezik olyan $F(x, y)$, hogy:
+        $$\dfrac{\partial F}{\partial x} = P \quad \text{és} \quad \dfrac{\partial F}{\partial y} = Q$$
+        \textbf{Egzaktra visszavezethető:} $P(x, y)dx + Q(x, y)dy = 0$ alakú DE általában nem egzakt (vagyis a bal oldala nem teljes differenciál), azaz:
+        $$\dfrac{\partial P(x, y)}{\partial y} \neq \dfrac{\partial Q(x, y)}{\partial x}$$
+        Ilyen esetben kísérletet tehetünk egy olyan $M(x, y) \neq 0$ függvény megkeresésére, amellyel a differenciálegyenletet beszorozva az új DE már egzakt lesz:
+        $$ln\left|M(x)\right| = \int \dfrac{P'_y-Q'_x}{Q}dx$$
+        $$ln\left|M(y)\right| = \int \dfrac{Q'_x-P'_y}{P}dy$$
+        Azt a multiplikátort kell használni, ami csak az egyik változótól függ (amit ki lehet integrálni).
+    \end{tcolorbox}
+
+    \begin{tcolorbox}[colback=red!5!white,colframe=red!60!black,title= 5. Lineáris állandó együtthatós DE]
+        \textbf{Lineáris:} az ismeretlen függvény és annak deriváltjai csak első hatványon szerepelnek és
+        ezek szorzatai sem fordulnak elő az egyenletben. (Ellenkező esetben nemlineáris.)
+        \textbf{Definíció:}
     \end{tcolorbox}
 
 
