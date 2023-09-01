@@ -86,23 +86,6 @@
       BUDAPEST, 2023
     }
   \end{titlepage}
-
-%\maketitle{}
-%\begin{tcolorbox}[colback=green!5!white,colframe=green!60!black,title= MINTA!!]
-    %\begin{itemize}
-        %\item To be continued
-    %\end{itemize}
-%\end{tcolorbox}
-%\begin{tcolorbox}[colback=blue!5!white,colframe=blue!70!black,title= MINTA!!]
-    %\begin{itemize}
-       % \item To be continued
-    %\end{itemize}
-%\end{tcolorbox}
-%\begin{tcolorbox}[colback=red!5!white,colframe=red!60!black,title= MINTA!!]
- %   \begin{itemize}
-   %     \item To be continued
-  %  \end{itemize}
-%\end{tcolorbox}
 \begin{center}
    \Large \textbf{Matematika G1 szóbeli beugró kérdések - 2023}
 \end{center}
@@ -150,7 +133,6 @@
     \item Numerikus sor divergenciája
     \item Konvergenciatesztek
 \end{enumerate}
-
 
 \newpage
 \textbf{Halmazelmélet és komplex számok:}
@@ -526,7 +508,7 @@ feltétel mellett az alábbi egyenlet teljesül, akkor konvergens:
 \begin{center}
     \Large \textbf{Matematika G2 szóbeli beugró kérdések - 2023}
  \end{center}
- \setstretch{0.75}
+ \setstretch{0.9}
 
 \textbf{Lineáris algebra I.}
 \begin{enumerate}
@@ -856,14 +838,14 @@ egy irányban minimum és egy másik irányban maximum van.
 \begin{tcolorbox}[colback=blue!5!white,colframe=blue!70!black,title= 8. Kvadratikus formák definitsége]
 Egy \(n\) változós \(q\) kvadratikus alakot:
 \begin{enumerate}
-    \item \textbf{pozitív definitnek} nevezünk, ha bármely \(x_1; \vdots ; x_n\) esetén \(q(x_1; \vdots ; x_n) \geq 0\), és \(q(x_1; \vdots ; x_n) = 0\) csak akkor,
-    ha \(x_1 = \vdots = x_n = 0\)
-    \item \textbf{pozitív szemidefinitnek} nevezzük, ha bármely \(x_1; \vdots ; x_n\) esetén \(q(x_1; \vdots ; x_n) \geq 0\), és van olyan \((x_1; \vdots ; x_n) \neq 0\),
-    melyre igaz hogy: \(q(x_1; \vdots ; x_n) = 0\)
-    \item \textbf{negatív definitnek} nevezzük, ha bármely \(x1; \vdots ; xn\) esetén \(q(x_1; \vdots ; x_n) \leq 0\), és \(q(x_1;\vdots ; x_n) = 0\), csak akkor
-    ha: \(x_1 = \vdots = x_n = 0\)
-    \item \textbf{negatív szemidefinitnek} nevezünk, ha bármely \(x_1;\vdots ; x_n\) esetén \(q(x_1; \vdots ; x_n) \leq 0\) és van olyan \((x_1; \vdots ; x_n) \neq 0\)
-    melyre \(q(x_1; \vdots ; x_n) = 0\)
+    \item \textbf{pozitív definitnek} nevezünk, ha bármely \(x_1; \hdots ; x_n\) esetén \(q(x_1; \hdots ; x_n) \geq 0\), és \(q(x_1; \hdots ; x_n) = 0\) csak akkor,
+    ha \(x_1 = \hdots = x_n = 0\)
+    \item \textbf{pozitív szemidefinitnek} nevezzük, ha bármely \(x_1; \hdots ; x_n\) esetén \(q(x_1; \hdots ; x_n) \geq 0\), és van olyan \((x_1; \hdots ; x_n) \neq 0\),
+    melyre igaz hogy: \(q(x_1; \hdots ; x_n) = 0\)
+    \item \textbf{negatív definitnek} nevezzük, ha bármely \(x1; \hdots ; xn\) esetén \(q(x_1; \hdots ; x_n) \leq 0\), és \(q(x_1;\hdots ; x_n) = 0\), csak akkor
+    ha: \(x_1 = \hdots = x_n = 0\)
+    \item \textbf{negatív szemidefinitnek} nevezünk, ha bármely \(x_1;\hdots ; x_n\) esetén \(q(x_1; \hdots ; x_n) \leq 0\) és van olyan \((x_1; \hdots ; x_n) \neq 0\)
+    melyre \(q(x_1; \hdots ; x_n) = 0\)
     \item \textbf{indefinitnek} nevezünk, ha felvesz pozitív és negatív értékeket is.
 \end{enumerate}
 \end{tcolorbox}
@@ -1306,9 +1288,75 @@ jelöljük.\\
 
     \begin{tcolorbox}[colback=red!5!white,colframe=red!60!black,title= 5. Lineáris állandó együtthatós DE]
         \textbf{Lineáris:} az ismeretlen függvény és annak deriváltjai csak első hatványon szerepelnek és
-        ezek szorzatai sem fordulnak elő az egyenletben. (Ellenkező esetben nemlineáris.)
-        \textbf{Definíció:} Laci
+        ezek szorzatai sem fordulnak elő az egyenletben. (Ellenkező esetben nemlineáris.) \\
+        \textbf{Definíció:} \\
+        Az $a_n \cdot y^{(n)} + a_{n-1} + \hdots + a_1 \cdot y' + a_0 \cdot y = 0$ DE-et, ahol $a_i \in \mathbb{R}, i \in \{0,1, \hdots n \}$ $n$-edrendű $(a_n \neq 0)$, állandó (konstans) együtthatós, lineáris differenciálegyenletnek hívjuk. \\
+        Egy $n$-edrendű, állandó együtthatós lineáris differenciálegyenlet megoldásai $n$-dimenziós, valós vektorteret alkotnak a $\mathbb{R}$ fölött. Ezért elegendő $n$ darab lineárisan független megoldást megtalálni. Ezeket elemi megoldásoknak, más szóval alaprendszernek nevezzük.
     \end{tcolorbox}
+    \begin{tcolorbox}[colback=red!5!white,colframe=red!60!black,title= 6. Lineárisan független függvényrendszer]
+        Legyen \(y_1, y_2, \hdots, y_n:(a, b) \to \mathbb{R}; (a, b)\)-n \(n-1\)-szer folytonosan differenciálható függvénynrendszer. Ez az \(n\) db függvény lineárisan független ha:
+        $$c_1y_1(x) + c_2y_2(x) + \hdots + c_ny_n(x) \equiv 0$$
+        azonosság csakis a \(c_1 = c_2 = \hdots = c_n = 0\) esetben áll fenn. Ellenkező esetben a függvények lineárisan függők.
+        
+    \end{tcolorbox}
+    \begin{tcolorbox}[colback=red!5!white,colframe=red!60!black,title= 7. Wronski-determináns]
+        A \(c_i\) konstans értékek miatt végtelen sok megoldása (alaprendszere) létezne egy \(n\)-edrendű differenciálegyenletnek:
+        $$y(x) = \sum c_iy_i = c_1y_1 + c_2y_2 + \hdots + c_ny_n$$
 
+A Wronski-determináns segítségével is meg tudjuk állapítani, hogy egy függvényrendszer
+lineárisan független-e. Az n db valós függvényt lineárisan függetlennek mondjuk, ha az ún.
+        Wronski-determináns nem nulla, és lineárisan függőnek, ha nulla.
+        $$det\ \underline{\underline{W}} = \begin{vmatrix}
+            y_1 &y_2  &y_3  & \hdots  &y_n \\ 
+            y'_1&y'_2  &y'_3  &\hdots  &y'_n \\ 
+            \vdots&\vdots  &\vdots  &\ddots  &\vdots \\ 
+             y^{n-1}_1&y^{n-1}_2  &y^{n-1}_3  &\hdots  & y^{n-1}_n 
+            \end{vmatrix}$$
 
+Tehát ha adott a DE egy alaprendszere, akkor ezzel meg tudjuk határozni, hogy az alaprendszer
+és annak tetszőleges lineáris kombinációja megoldása-e a differenciálegyenletnek.
+(Visszafelé nem igaz, lehet, hogy a függvényrendszer lineárisan független, de \(det\ W = 0\))
+    \end{tcolorbox}
+    \begin{tcolorbox}[colback=red!5!white,colframe=red!60!black,title= 8. Differenciálegyenlet-rendszer]
+        A következő alakban adott egy elsőrendű differenciálegyenlet-rendszer:
+$$\begin{Bmatrix}
+    y'_1 = f_1(x,y_1,y_2, \hdots, y_n)\\ 
+    y'_2 = f_2(x,y_1,y_2, \hdots, y_n)\\ 
+    \vdots\\ 
+    y'_n = f_n(x,y_1,y_2, \hdots, y_n)
+\end{Bmatrix} $$
+
+Ahol \(y_1, y_2, \hdots, y_n\) a keresendő függvények és \(x\) a független változó.\\
+Általános alak:
+$$\underline{\dot{x} = \underline{\underline{A}}} \cdot \underline{x}$$
+$$\underline{x} = \begin{bmatrix}
+    x(t)\\ 
+    y(t)\\ 
+    \vdots
+    \end{bmatrix}_{n \time 1}$$
+    Ahol $\underline{\underline{A}}$ az együtthatómátrix és most \(t\) a független változó.\\
+    Egy ilyen DE-rendszer megfeleltethető egy állandó együtthatós \(n\)-edrendű, lineáris DE-nek.\\
+Az alaphalmaz vagy ún. hipermátrix:
+$$\underline{\underline{X}}(t) =[e^{\lambda_1t } \cdot \underline{s}_1, e^{\lambda_2t } \cdot \underline{s}_2, \hdots e^{\lambda_nt } \cdot \underline{s}_n ]_{1\times n} $$
+Ahol \(\lambda_n\): \(\underline{\underline{A}}\) sajátértékei\\
+És \(\underline{s}_n\): \(\underline{\underline{A}}\) sajátvektorai\\
+Példa: 
+$$\underline{x}(t) = \begin{bmatrix}
+    C_1 \cdot e^t + C_2 \cdot e^{5t}\\ 
+    -C_1 \cdot e^t + 3C_2 \cdot e^{5t}
+    \end{bmatrix}$$
+    Ha a sajátértékek \(\lambda_1 = 5\) és \(\lambda_2 = 1\)\\
+    És a sajátvektorok
+\(\underline{s}_1 = \begin{bmatrix}
+    1\\ 
+    -1
+    \end{bmatrix}\) és \(\underline{s_2} = \begin{bmatrix}
+        1\\ 
+        3
+        \end{bmatrix}\)\\
+        Komplex sajátértékek esetén:\\
+        \begin{center}
+            \(\underline{x}(t) = C_1 \cdot [e^{\lambda t} \cos(\beta t)\cdot \underline{v}_1- e^{\lambda t} \cdot \sin (\beta t ) \cdot \underline{v}_2] +  C_2 \cdot [e^{\lambda t} \cos(\beta t)\cdot \underline{v}_2- e^{\lambda t} \cdot \sin (\beta t ) \cdot \underline{v}_1]\) 
+        \end{center}
+    \end{tcolorbox}
 \end{document}
